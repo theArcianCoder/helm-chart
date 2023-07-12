@@ -58,6 +58,6 @@ entries:
     - https://github.com/prometheus-operator/kube-prometheus
     type: application
     urls:
-    - https://https/github.com/theArcianCoder/helm-chart/raw/main/kube-prometheus-stack-45.27.2.tgz
+    - https://github.com/theArcianCoder/helm-chart/raw/main/kube-prometheus-stack-45.27.2.tgz
     version: 45.27.2
 generated: "2023-07-12T13:36:05.272466047+05:30"
