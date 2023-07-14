@@ -69,6 +69,8 @@ data:
       type: cloudwatch
       access: proxy
       url: {{ $.Values.grafana.sidecar.datasources.cloudwatch.url }}
+      jsonData:
+        region: us-west-2
      
 
     # Add InfluxDB datasource
