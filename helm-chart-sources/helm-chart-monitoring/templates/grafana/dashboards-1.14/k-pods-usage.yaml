@@ -178,7 +178,7 @@ data:
                       "expr": "kube_pod_info{namespace=\"$namespace\", pod=\"$pod\"}",
                       "instant": true,
                       "interval": "",
-                      "legendFormat": "{${ created_by_kind }}: {{ created_by_name }}",
+                      "legendFormat": "{${ created_by_kind }}: {${ created_by_name }}",
                       "refId": "A"
                     }
                   ],
