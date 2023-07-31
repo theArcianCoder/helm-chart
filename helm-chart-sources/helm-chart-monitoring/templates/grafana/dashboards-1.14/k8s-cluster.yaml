@@ -1098,7 +1098,7 @@ data:
                         "uid": "prometheus"
                     },
                     "exemplar": true,
-                    "expr": "kube_node_status_condition{node=~\"$node\",condition=\"Ready\",status=\"false\"}",
+                    "expr": "kube_node_status_condition{$node=~\"$node\",condition=\"Ready\",status=\"false\"}",
                     "format": "time_series",
                     "interval": "",
                     "intervalFactor": 1,
