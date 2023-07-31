@@ -1332,7 +1332,7 @@ data:
                     "expr": "kube_deployment_status_replicas{namespace=~\"$namespace\"}",
                     "format": "time_series",
                     "interval": "",
-                    "legendFormat": "{{ deployment }}",
+                    "legendFormat": "{${ deployment }}",
                     "refId": "A"
                     }
                 ],
@@ -1432,7 +1432,7 @@ data:
                     "exemplar": true,
                     "expr": "kube_deployment_status_replicas{namespace=~\"$namespace\"}",
                     "interval": "",
-                    "legendFormat": "{{ deployment }}",
+                    "legendFormat": "{${ deployment }}",
                     "refId": "A"
                     }
                 ],
