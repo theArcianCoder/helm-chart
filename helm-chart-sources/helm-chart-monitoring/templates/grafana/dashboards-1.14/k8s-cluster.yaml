@@ -1102,7 +1102,7 @@ data:
                     "format": "time_series",
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{{node}}",
+                    "legendFormat": "{${node}}",
                     "refId": "A"
                     }
                 ],
@@ -1197,7 +1197,7 @@ data:
                     "instant": false,
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{{node}} {{condition}}",
+                    "legendFormat": "{${node}} {{condition}}",
                     "refId": "A"
                     },
                     {
@@ -1210,7 +1210,7 @@ data:
                     "format": "time_series",
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{{node}} {{condition}}",
+                    "legendFormat": "{${node}} {{condition}}",
                     "refId": "B"
                     },
                     {
@@ -1223,7 +1223,7 @@ data:
                     "format": "time_series",
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{{node}} {{condition}}",
+                    "legendFormat": "{${node}} {{condition}}",
                     "refId": "C"
                     }
                 ],
