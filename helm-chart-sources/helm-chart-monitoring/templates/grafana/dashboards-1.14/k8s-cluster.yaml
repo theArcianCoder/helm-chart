@@ -1716,7 +1716,7 @@ data:
                     "expr": "kube_pod_info{namespace=~\"$namespace\",node=~\"$node\"}",
                     "format": "time_series",
                     "interval": "",
-                    "legendFormat": "{{created_by_name}}",
+                    "legendFormat": "{${created_by_name}}",
                     "range": true,
                     "refId": "A"
                     }
@@ -2036,7 +2036,7 @@ data:
                     "instant": false,
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{{exported_pod}}",
+                    "legendFormat": "{${exported_pod}}",
                     "range": true,
                     "refId": "A"
                     }
@@ -2108,7 +2108,7 @@ data:
                     "format": "time_series",
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{{ exported_container }}",
+                    "legendFormat": "{${ exported_container }}",
                     "range": true,
                     "refId": "A"
                     }
@@ -2181,7 +2181,7 @@ data:
                     "format": "time_series",
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{{exported_container}}",
+                    "legendFormat": "{${exported_container}}",
                     "range": true,
                     "refId": "A"
                     }
