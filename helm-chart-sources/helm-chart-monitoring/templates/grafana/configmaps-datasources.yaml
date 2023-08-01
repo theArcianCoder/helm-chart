@@ -68,10 +68,9 @@ data:
     - name: CloudWatch
       type: cloudwatch
       access: proxy
-      url: {{ $.Values.grafana.sidecar.datasources.cloudwatch.url }}
       jsonData:
         region: us-west-2
-        namespace: CWAgent
+        aws_namespace: CWAgent
 
     # Add InfluxDB datasource
     - name: InfluxDB
