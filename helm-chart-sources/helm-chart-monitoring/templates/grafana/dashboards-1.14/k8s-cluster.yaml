@@ -828,7 +828,7 @@ data:
                     "exemplar": true,
                     "expr": "kube_service_spec_type{namespace=~\"$namespace\"}",
                     "interval": "",
-                    "legendFormat": "{${service}}",
+                    "legendFormat": "{{`{{`}}service{{`}}`}}",
                     "refId": "A"
                     }
                 ],
