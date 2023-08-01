@@ -885,7 +885,7 @@ data:
                       "instant": false,
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} -  master",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} -  master",
                       "metric": "",
                       "refId": "A",
                       "step": 10
@@ -895,7 +895,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} -  data",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} -  data",
                       "metric": "",
                       "refId": "B",
                       "step": 10
@@ -984,7 +984,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${  name }}  - used: {${area}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}}  - used: {{`{{`}}area{{`}}`}}",
                       "metric": "",
                       "refId": "A",
                       "step": 10
@@ -993,7 +993,7 @@ data:
                       "expr": "elasticsearch_jvm_memory_committed_bytes{cluster=\"$cluster\",name=~\"$node\",name=~\"$node\"}",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${  name }}  - committed: {${area}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}}  - committed: {{`{{`}}area{{`}}`}}",
                       "refId": "B",
                       "step": 10
                     },
@@ -1001,7 +1001,7 @@ data:
                       "expr": "elasticsearch_jvm_memory_max_bytes{cluster=\"$cluster\",name=~\"$node\",name=~\"$node\"}",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${  name }}  - max: {${area}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}}  - max: {{`{{`}}area{{`}}`}}",
                       "refId": "C",
                       "step": 10
                     }
@@ -1088,7 +1088,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} - {${path}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - {{`{{`}}path{{`}}`}}",
                       "metric": "",
                       "refId": "A",
                       "step": 10
@@ -1197,7 +1197,7 @@ data:
                       "expr": "irate(elasticsearch_transport_tx_size_bytes_total{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} -sent",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} -sent",
                       "refId": "D",
                       "step": 10
                     },
@@ -1205,7 +1205,7 @@ data:
                       "expr": "irate(elasticsearch_transport_rx_size_bytes_total{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} -received",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} -received",
                       "refId": "C",
                       "step": 10
                     }
@@ -1304,7 +1304,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}}",
                       "metric": "",
                       "refId": "A",
                       "step": 10
@@ -1392,7 +1392,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}}",
                       "metric": "",
                       "refId": "A",
                       "step": 10
@@ -1480,7 +1480,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}}",
                       "metric": "",
                       "refId": "A",
                       "step": 10
@@ -1568,7 +1568,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}}",
                       "metric": "",
                       "refId": "A",
                       "step": 10
@@ -1670,7 +1670,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} - indexing",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - indexing",
                       "metric": "",
                       "refId": "A",
                       "step": 4
@@ -1679,7 +1679,7 @@ data:
                       "expr": "irate(elasticsearch_indices_search_query_total{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} - query",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - query",
                       "refId": "B",
                       "step": 4
                     },
@@ -1687,7 +1687,7 @@ data:
                       "expr": "irate(elasticsearch_indices_search_fetch_total{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} - fetch",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - fetch",
                       "refId": "C",
                       "step": 4
                     },
@@ -1695,7 +1695,7 @@ data:
                       "expr": "irate(elasticsearch_indices_merges_total{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} - merges",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - merges",
                       "refId": "D",
                       "step": 4
                     },
@@ -1703,7 +1703,7 @@ data:
                       "expr": "irate(elasticsearch_indices_refresh_total{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} - refresh",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - refresh",
                       "refId": "E",
                       "step": 4
                     },
@@ -1711,7 +1711,7 @@ data:
                       "expr": "irate(elasticsearch_indices_flush_total{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} - flush",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - flush",
                       "refId": "F",
                       "step": 4
                     }
@@ -1800,7 +1800,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} - indexing",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - indexing",
                       "metric": "",
                       "refId": "A",
                       "step": 4
@@ -1809,7 +1809,7 @@ data:
                       "expr": "irate(elasticsearch_indices_search_query_time_ms_total{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} - query",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - query",
                       "refId": "B",
                       "step": 4
                     },
@@ -1817,7 +1817,7 @@ data:
                       "expr": "irate(elasticsearch_indices_search_fetch_time_ms_total{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} - fetch",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - fetch",
                       "refId": "C",
                       "step": 4
                     },
@@ -1825,7 +1825,7 @@ data:
                       "expr": "irate(elasticsearch_indices_merges_total_time_ms_total{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} - merges",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - merges",
                       "refId": "D",
                       "step": 4
                     },
@@ -1833,7 +1833,7 @@ data:
                       "expr": "irate(elasticsearch_indices_refresh_total_time_ms_total{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} - refresh",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - refresh",
                       "refId": "E",
                       "step": 4
                     },
@@ -1841,7 +1841,7 @@ data:
                       "expr": "irate(elasticsearch_indices_flush_time_ms_total{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ name }} - flush",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - flush",
                       "refId": "F",
                       "step": 4
                     }
@@ -1940,7 +1940,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}}",
                       "metric": "",
                       "refId": "A",
                       "step": 4
@@ -2028,7 +2028,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}}",
                       "metric": "",
                       "refId": "A",
                       "step": 4
@@ -2116,7 +2116,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}}",
                       "metric": "",
                       "refId": "A",
                       "step": 4
@@ -2216,7 +2216,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}}",
                       "metric": "",
                       "refId": "A",
                       "step": 10
@@ -2304,7 +2304,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}}",
                       "metric": "",
                       "refId": "A",
                       "step": 10
@@ -2392,7 +2392,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}}",
                       "metric": "",
                       "refId": "A",
                       "step": 10
@@ -2480,7 +2480,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}}",
                       "metric": "",
                       "refId": "A",
                       "step": 10
@@ -2576,7 +2576,7 @@ data:
                       "expr": " irate(elasticsearch_thread_pool_rejected_count{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}} - {${ type }}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - {{`{{`}}type{{`}}`}}",
                       "refId": "A",
                       "step": 10
                     }
@@ -2658,7 +2658,7 @@ data:
                       "expr": "elasticsearch_thread_pool_active_count{cluster=\"$cluster\",name=~\"$node\"}",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}} - {${ type }}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - {{`{{`}}type{{`}}`}}",
                       "refId": "A",
                       "step": 10
                     }
@@ -2741,7 +2741,7 @@ data:
                       "expr": "elasticsearch_thread_pool_active_count{cluster=\"$cluster\",name=~\"$node\"}",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}} - {${ type }}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - {{`{{`}}type{{`}}`}}",
                       "refId": "A",
                       "step": 10
                     }
@@ -2823,7 +2823,7 @@ data:
                       "expr": "irate(elasticsearch_thread_pool_completed_count{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}} - {${ type }}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - {{`{{`}}type{{`}}`}}",
                       "refId": "A",
                       "step": 10
                     }
@@ -2921,7 +2921,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}} - {${gc}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - {{`{{`}}gc{{`}}`}}",
                       "metric": "",
                       "refId": "A",
                       "step": 4
@@ -3009,7 +3009,7 @@ data:
                       "format": "time_series",
                       "interval": "",
                       "intervalFactor": 2,
-                      "legendFormat": "{${name}} - {${gc}}",
+                      "legendFormat": "{{`{{`}}name{{`}}`}} - {{`{{`}}gc{{`}}`}}",
                       "metric": "",
                       "refId": "A",
                       "step": 4

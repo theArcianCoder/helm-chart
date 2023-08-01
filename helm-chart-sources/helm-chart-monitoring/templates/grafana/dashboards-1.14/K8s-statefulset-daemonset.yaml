@@ -788,7 +788,7 @@ data:
                       "expr": "(sum(kube_deployment_status_replicas{deployment=~\".*$Deployment$Statefulset$Daemonset\"}) or vector(0)) + (sum(kube_statefulset_replicas{statefulset=~\".*$Deployment$Statefulset$Daemonset\"}) or vector(0)) + (sum(kube_daemonset_status_desired_number_scheduled{daemonset=~\".*$Deployment$Statefulset$Daemonset\"}) or vector(0))",
                       "format": "time_series",
                       "intervalFactor": 2,
-                      "legendFormat": "{${ Daemonset }}",
+                      "legendFormat": "{{`{{`}}Daemonset{{`}}`}}",
                       "refId": "A",
                       "step": 1800
                     }
@@ -867,7 +867,7 @@ data:
                       "hide": true,
                       "interval": "10s",
                       "intervalFactor": 1,
-                      "legendFormat": "real: {${ kubernetes_io_hostname }} | {${ pod_name }} ",
+                      "legendFormat": "real: {{`{{`}}kubernetes_io_hostname{{`}}`}} | {{`{{`}}pod_name{{`}}`}} ",
                       "metric": "container_cpu",
                       "refId": "A",
                       "step": 60
@@ -881,7 +881,7 @@ data:
                       "format": "time_series",
                       "hide": true,
                       "intervalFactor": 2,
-                      "legendFormat": "rqst: {${ node }} | {${ pod }}",
+                      "legendFormat": "rqst: {{`{{`}}node{{`}}`}} | {{`{{`}}pod{{`}}`}}",
                       "refId": "B",
                       "step": 120
                     },
@@ -894,7 +894,7 @@ data:
                       "format": "time_series",
                       "hide": true,
                       "intervalFactor": 2,
-                      "legendFormat": "avlbl: {${ node }}",
+                      "legendFormat": "avlbl: {{`{{`}}node{{`}}`}}",
                       "refId": "C",
                       "step": 30
                     },
@@ -909,7 +909,7 @@ data:
                       "hide": false,
                       "interval": "10s",
                       "intervalFactor": 1,
-                      "legendFormat": "real: {${ kubernetes_io_hostname }} | {${ pod_name }} ",
+                      "legendFormat": "real: {{`{{`}}kubernetes_io_hostname{{`}}`}} | {{`{{`}}pod_name{{`}}`}} ",
                       "metric": "container_cpu",
                       "refId": "D",
                       "step": 60
@@ -1017,7 +1017,7 @@ data:
                       "hide": true,
                       "interval": "10s",
                       "intervalFactor": 1,
-                      "legendFormat": "real: {${kubernetes_io_hostname }} | {${ pod_name }}",
+                      "legendFormat": "real: {{`{{`}}kubernetes_io_hostname{{`}}`}} | {{`{{`}}pod_name{{`}}`}}",
                       "metric": "container_memory_usage:sort_desc",
                       "refId": "A",
                       "step": 60
@@ -1031,7 +1031,7 @@ data:
                       "format": "time_series",
                       "hide": true,
                       "intervalFactor": 2,
-                      "legendFormat": "rqst: {${ node }} | {${ pod }}",
+                      "legendFormat": "rqst: {{`{{`}}node{{`}}`}} | {{`{{`}}pod{{`}}`}}",
                       "refId": "B",
                       "step": 120
                     },
@@ -1044,7 +1044,7 @@ data:
                       "format": "time_series",
                       "hide": true,
                       "intervalFactor": 2,
-                      "legendFormat": "avlbl: {${ node }}",
+                      "legendFormat": "avlbl: {{`{{`}}node{{`}}`}}",
                       "refId": "C",
                       "step": 30
                     },
@@ -1059,7 +1059,7 @@ data:
                       "hide": false,
                       "interval": "10s",
                       "intervalFactor": 1,
-                      "legendFormat": "real: {${kubernetes_io_hostname }} | {${ pod_name }}",
+                      "legendFormat": "real: {{`{{`}}kubernetes_io_hostname{{`}}`}} | {{`{{`}}pod_name{{`}}`}}",
                       "metric": "container_memory_usage:sort_desc",
                       "refId": "D",
                       "step": 60
@@ -1073,7 +1073,7 @@ data:
                       "format": "time_series",
                       "hide": false,
                       "intervalFactor": 2,
-                      "legendFormat": "rqst: {${ node }} | {${ pod }}",
+                      "legendFormat": "rqst: {{`{{`}}node{{`}}`}} | {{`{{`}}pod{{`}}`}}",
                       "refId": "E",
                       "step": 120
                     }
@@ -1169,7 +1169,7 @@ data:
                       "format": "time_series",
                       "hide": false,
                       "intervalFactor": 2,
-                      "legendFormat": "{${ persistentvolumeclaim }} | {${ kubernetes_io_hostname }}",
+                      "legendFormat": "{{`{{`}}persistentvolumeclaim{{`}}`}} | {{`{{`}}kubernetes_io_hostname{{`}}`}}",
                       "refId": "A",
                       "step": 120
                     }
@@ -1270,7 +1270,7 @@ data:
                       "hide": true,
                       "interval": "10s",
                       "intervalFactor": 1,
-                      "legendFormat": "-> {${ kubernetes_io_hostname }} | {${ pod_name }}",
+                      "legendFormat": "-> {{`{{`}}kubernetes_io_hostname{{`}}`}} | {{`{{`}}pod_name{{`}}`}}",
                       "metric": "network",
                       "refId": "A",
                       "step": 60
@@ -1285,7 +1285,7 @@ data:
                       "hide": true,
                       "interval": "10s",
                       "intervalFactor": 1,
-                      "legendFormat": "<- {${ kubernetes_io_hostname }} | {${ pod_name }}",
+                      "legendFormat": "<- {{`{{`}}kubernetes_io_hostname{{`}}`}} | {{`{{`}}pod_name{{`}}`}}",
                       "metric": "network",
                       "refId": "B",
                       "step": 60
@@ -1301,7 +1301,7 @@ data:
                       "hide": false,
                       "interval": "10s",
                       "intervalFactor": 1,
-                      "legendFormat": "-> {${ kubernetes_io_hostname }} | {${ pod_name }}",
+                      "legendFormat": "-> {{`{{`}}kubernetes_io_hostname{{`}}`}} | {{`{{`}}pod_name{{`}}`}}",
                       "metric": "network",
                       "refId": "C",
                       "step": 60
@@ -1317,7 +1317,7 @@ data:
                       "hide": false,
                       "interval": "10s",
                       "intervalFactor": 1,
-                      "legendFormat": "<- {${ kubernetes_io_hostname }} | {${ pod_name }}",
+                      "legendFormat": "<- {{`{{`}}kubernetes_io_hostname{{`}}`}} | {{`{{`}}pod_name{{`}}`}}",
                       "metric": "network",
                       "refId": "D",
                       "step": 60

@@ -64,7 +64,7 @@ data:
               {
                 "datasource": {
                   "type": "prometheus",
-                  "uid": "F9r0LmY7z"
+                  "uid": "prometheus"
                 },
                 "fieldConfig": {
                   "defaults": {
@@ -133,7 +133,7 @@ data:
                   {
                     "datasource": {
                       "type": "prometheus",
-                      "uid": "F9r0LmY7z"
+                      "uid": "prometheus"
                     },
                     "expr": "min (kube_deployment_status_replicas_available{deployment=\"$app\",namespace=\"$namespace\",job=\"kubernetes-pods\"}) without (instance, pod)",
                     "format": "time_series",
@@ -297,7 +297,7 @@ data:
                     "instant": false,
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{${ image }}",
+                    "legendFormat": "{{`{{`}}image{{`}}`}}",
                     "refId": "A"
                   }
                 ],
@@ -352,7 +352,7 @@ data:
                   },
                   "datasource": {
                     "type": "prometheus",
-                    "uid": "F9r0LmY7z"
+                    "uid": "prometheus"
                   },
                   "definition": "label_values(kube_pod_info, namespace)",
                   "hide": 0,
@@ -682,7 +682,7 @@ data:
                   },
                   "datasource": {
                     "type": "prometheus",
-                    "uid": "F9r0LmY7z"
+                    "uid": "prometheus"
                   },
                   "definition": "label_values(kube_deployment_labels{namespace=~\"$namespace\"}, deployment)",
                   "hide": 0,

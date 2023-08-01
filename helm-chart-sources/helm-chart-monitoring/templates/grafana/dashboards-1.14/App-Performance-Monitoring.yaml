@@ -450,7 +450,7 @@ data:
                           {
                             "datasource": {
                               "type": "prometheus",
-                              "uid": "6oCJLmYnz"
+                              "uid": "prometheus"
                             },
                             "fieldConfig": {
                               "defaults": {
@@ -525,7 +525,7 @@ data:
                               {
                                 "datasource": {
                                   "type": "prometheus",
-                                  "uid": "6oCJLmYnz"
+                                  "uid": "prometheus"
                                 },
                                 "exemplar": true,
                                 "expr": "sum(irate(kong_http_status{service=\"$deployment_name\"}[1m]))",
@@ -540,7 +540,7 @@ data:
                           {
                             "datasource": {
                               "type": "prometheus",
-                              "uid": "6oCJLmYnz"
+                              "uid": "prometheus"
                             },
                             "fieldConfig": {
                               "defaults": {
@@ -629,32 +629,32 @@ data:
                               {
                                 "datasource": {
                                   "type": "prometheus",
-                                  "uid": "6oCJLmYnz"
+                                  "uid": "prometheus"
                                 },
                                 "exemplar": true,
                                 "expr": "histogram_quantile(0.80, sum(rate(kong_latency_bucket{type=\"kong\", service =~ \"$deployment_name\"}[1m])) by (service,le))",
                                 "interval": "",
-                                "legendFormat": "p80-{${deployment_name}}",
+                                "legendFormat": "p80-{{`{{`}}deployment_name{{`}}`}}",
                                 "refId": "A"
                               },
                               {
                                 "datasource": {
                                   "type": "prometheus",
-                                  "uid": "6oCJLmYnz"
+                                  "uid": "prometheus"
                                 },
                                 "exemplar": true,
                                 "expr": "histogram_quantile(0.90, sum(rate(kong_latency_bucket{type=\"kong\", service =~ \"$deployment_name\"}[1m])) by (service,le))",
                                 "interval": "",
-                                "legendFormat": "p90-{${deployment_name}}",
+                                "legendFormat": "p90-{{`{{`}}deployment_name{{`}}`}}",
                                 "refId": "B"
                               },
                               {
                                 "datasource": {
                                   "type": "prometheus",
-                                  "uid": "6oCJLmYnz"
+                                  "uid": "prometheus"
                                 },
                                 "expr": "histogram_quantile(0.99, sum(rate(kong_latency_bucket{type=\"kong\", service =~ \"$deployment_name\"}[1m])) by (service,le))",
-                                "legendFormat": "p99-{${deployment_name}}",
+                                "legendFormat": "p99-{{`{{`}}deployment_name{{`}}`}}",
                                 "refId": "C"
                               }
                             ],
@@ -664,7 +664,7 @@ data:
                           {
                             "datasource": {
                               "type": "prometheus",
-                              "uid": "6oCJLmYnz"
+                              "uid": "prometheus"
                             },
                             "fieldConfig": {
                               "defaults": {
@@ -742,31 +742,31 @@ data:
                               {
                                 "datasource": {
                                   "type": "prometheus",
-                                  "uid": "6oCJLmYnz"
+                                  "uid": "prometheus"
                                 },
                                 "exemplar": true,
                                 "expr": "histogram_quantile(0.90, sum(rate(kong_latency_bucket{type=\"request\", service =~ \"$deployment_name\"}[1m])) by (service,le))",
                                 "interval": "",
-                                "legendFormat": "p90-{${$deployment_name}}",
+                                "legendFormat": "p90-{{`{{`}}deployment_name{{`}}`}}",
                                 "refId": "A"
                               },
                               {
                                 "datasource": {
                                   "type": "prometheus",
-                                  "uid": "6oCJLmYnz"
+                                  "uid": "prometheus"
                                 },
                                 "expr": "histogram_quantile(0.95, sum(rate(kong_latency_bucket{type=\"request\", service =~ \"$deployment_name\"}[1m])) by (service,le))",
-                                "legendFormat": "p95-{${$deployment_name}}",
+                                "legendFormat": "p95-{{`{{`}}deployment_name{{`}}`}}",
                                 "refId": "B"
                               },
                               {
                                 "datasource": {
                                   "type": "prometheus",
-                                  "uid": "6oCJLmYnz"
+                                  "uid": "prometheus"
                                 },
                                 "expr": "histogram_quantile(0.99, sum(rate(kong_latency_bucket{type=\"request\", service =~ \"$deployment_name\"}[1m])) by (service,le))",
                                 "hide": false,
-                                "legendFormat": "p99-{${$deployment_name}}",
+                                "legendFormat": "p99-{{`{{`}}deployment_name{{`}}`}}",
                                 "refId": "C"
                               }
                             ],
@@ -776,7 +776,7 @@ data:
                           {
                             "datasource": {
                               "type": "prometheus",
-                              "uid": "6oCJLmYnz"
+                              "uid": "prometheus"
                             },
                             "fieldConfig": {
                               "defaults": {
@@ -853,29 +853,29 @@ data:
                               {
                                 "datasource": {
                                   "type": "prometheus",
-                                  "uid": "6oCJLmYnz"
+                                  "uid": "prometheus"
                                 },
                                 "expr": "histogram_quantile(0.90, sum(rate(kong_latency_bucket{type=\"upstream\", service =~ \"$deployment_name\"}[1m])) by (service,le))",
-                                "legendFormat": "p90-{${$deployment_name}}",
+                                "legendFormat": "p90-{{`{{`}}deployment_name{{`}}`}}",
                                 "refId": "A"
                               },
                               {
                                 "datasource": {
                                   "type": "prometheus",
-                                  "uid": "6oCJLmYnz"
+                                  "uid": "prometheus"
                                 },
                                 "expr": "histogram_quantile(0.95, sum(rate(kong_latency_bucket{type=\"upstream\", service =~ \"$deployment_name\"}[1m])) by (service,le))",
                                 "hide": false,
-                                "legendFormat": "p95-{${$deployment_name}}",
+                                "legendFormat": "p95-{{`{{`}}deployment_name{{`}}`}}",
                                 "refId": "B"
                               },
                               {
                                 "datasource": {
                                   "type": "prometheus",
-                                  "uid": "6oCJLmYnz"
+                                  "uid": "prometheus"
                                 },
                                 "expr": "histogram_quantile(0.99, sum(rate(kong_latency_bucket{type=\"upstream\", service =~ \"$deployment_name\"}[1m])) by (service,le))",
-                                "legendFormat": "p99-{${$deployment_name}}",
+                                "legendFormat": "p99-{{`{{`}}deployment_name{{`}}`}}",
                                 "refId": "C"
                               }
                             ],

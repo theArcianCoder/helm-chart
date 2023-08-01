@@ -768,7 +768,7 @@ data:
                     "exemplar": true,
                     "expr": "kube_service_spec_type{namespace=~\"$namespace\"}",
                     "interval": "",
-                    "legendFormat": "{${service}} - {${type}}",
+                    "legendFormat": "{{`{{`}}service{{`}}`}} - {{`{{`}}type{{`}}`}}",
                     "refId": "A"
                     }
                 ],
@@ -1098,11 +1098,11 @@ data:
                         "uid": "prometheus"
                     },
                     "exemplar": true,
-                    "expr": "kube_node_status_condition{node=~\"{${node}}\",condition=\"Ready\",status=\"false\"}",
+                    "expr": "kube_node_status_condition{node=~\"{{`{{`}}node{{`}}`}}\",condition=\"Ready\",status=\"false\"}",
                     "format": "time_series",
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{${node}}",
+                    "legendFormat": "{{`{{`}}node{{`}}`}}",
                     "refId": "A"
                     }
                 ],
@@ -1197,7 +1197,7 @@ data:
                     "instant": false,
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{${node}} {${condition}}",
+                    "legendFormat": "{{`{{`}}node{{`}}`}} {{`{{`}}condition{{`}}`}}",
                     "refId": "A"
                     },
                     {
@@ -1210,7 +1210,7 @@ data:
                     "format": "time_series",
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{${node}} {${condition}}",
+                    "legendFormat": "{{`{{`}}node{{`}}`}} {{`{{`}}condition{{`}}`}}",
                     "refId": "B"
                     },
                     {
@@ -1223,7 +1223,7 @@ data:
                     "format": "time_series",
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{${node}} {${condition}}",
+                    "legendFormat": "{{`{{`}}node{{`}}`}} {{`{{`}}condition{{`}}`}}",
                     "refId": "C"
                     }
                 ],
@@ -1332,7 +1332,7 @@ data:
                     "expr": "kube_deployment_status_replicas{namespace=~\"$namespace\"}",
                     "format": "time_series",
                     "interval": "",
-                    "legendFormat": "{${ deployment }}",
+                    "legendFormat": " {{`{{`}}deployment{{`}}`}}",
                     "refId": "A"
                     }
                 ],
@@ -1432,7 +1432,7 @@ data:
                     "exemplar": true,
                     "expr": "kube_deployment_status_replicas{namespace=~\"$namespace\"}",
                     "interval": "",
-                    "legendFormat": "{${ deployment }}",
+                    "legendFormat": "{{`{{`}}deployment{{`}}`}}}",
                     "refId": "A"
                     }
                 ],
@@ -1716,7 +1716,7 @@ data:
                     "expr": "kube_pod_info{namespace=~\"$namespace\",node=~\"$node\"}",
                     "format": "time_series",
                     "interval": "",
-                    "legendFormat": "{${created_by_name}}",
+                    "legendFormat": "{{`{{`}}created_by_name{{`}}`}}",
                     "range": true,
                     "refId": "A"
                     }
@@ -2036,7 +2036,7 @@ data:
                     "instant": false,
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{${exported_pod}}",
+                    "legendFormat": "{{`{{`}}exported_pod{{`}}`}}",
                     "range": true,
                     "refId": "A"
                     }
@@ -2108,7 +2108,7 @@ data:
                     "format": "time_series",
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{${ exported_container }}",
+                    "legendFormat": "{{`{{`}}exported_container{{`}}`}}",
                     "range": true,
                     "refId": "A"
                     }
@@ -2181,7 +2181,7 @@ data:
                     "format": "time_series",
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{${exported_container}}",
+                    "legendFormat": "{{`{{`}}exported_container{{`}}`}}",
                     "range": true,
                     "refId": "A"
                     }

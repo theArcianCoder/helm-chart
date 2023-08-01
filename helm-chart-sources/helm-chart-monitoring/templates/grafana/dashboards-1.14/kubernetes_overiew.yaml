@@ -1117,7 +1117,7 @@ data:
                 "uid": "$cluster"
               },
               "expr": "100 * (1- ((avg_over_time(node_memory_MemFree_bytes{kubernetes_node=~\"^$Node$\", job=\"kubernetes-service-endpoints\"}[5m]) + avg_over_time(node_memory_Cached_bytes{kubernetes_node=~\"^$Node$\", job=\"kubernetes-service-endpoints\"}[10m]) + avg_over_time(node_memory_Buffers_bytes{kubernetes_node=~\"^$Node$\",job=\"kubernetes-service-endpoints\"}[5m])) / avg_over_time(node_memory_MemTotal_bytes{kubernetes_node=~\"^$Node$\",job=\"kubernetes-service-endpoints\"}[5m])))",
-              "legendFormat": "{${kubernetes_node}}",
+              "legendFormat": "{{`{{`}}kubernetes_node{{`}}`}}",
               "refId": "A"
             }
           ],
@@ -1199,7 +1199,7 @@ data:
               },
               "expr": "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\",kubernetes_node=~\"^$Node$\",job=\"kubernetes-service-endpoints\"} * 100) / node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\",kubernetes_node=~\"^$Node$\",job=\"kubernetes-service-endpoints\"})",
               "instant": false,
-              "legendFormat": "{${kubernetes_node}}",
+              "legendFormat": "{{`{{`}}kubernetes_node{{`}}`}}",
               "refId": "B"
             }
           ],
@@ -2094,7 +2094,7 @@ data:
               "exemplar": true,
               "expr": "topk(10,sum(kube_pod_container_resource_requests{resource=\"cpu\"}) by (namespace))",
               "interval": "",
-              "legendFormat": "{${namespace}}",
+              "legendFormat": "{{`{{`}}namespace{{`}}`}}",
               "refId": "A"
             }
           ],
@@ -2190,7 +2190,7 @@ data:
               "expr": "sum(rate (container_cpu_usage_seconds_total{image!=\"\",name=~\"^k8s_.*\",kubernetes_io_hostname=~\"^$Node$\", namespace=~\"^$namespace$\",container=~\"^$application$\"}[5m])) by (pod)",
               "hide": false,
               "interval": "10s",
-              "legendFormat": "{${pod}}",
+              "legendFormat": "{{`{{`}}pod{{`}}`}}",
               "refId": "A"
             }
           ],
@@ -2286,7 +2286,7 @@ data:
               "expr": "topk(10,sum(kube_pod_container_resource_requests{resource=\"memory\"}) by (namespace))",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "{${namespace}}",
+              "legendFormat": "{{`{{`}}namespace{{`}}`}}",
               "refId": "A"
             }
           ],
@@ -2385,7 +2385,7 @@ data:
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "{${pod}}",
+              "legendFormat": "{{`{{`}}pod{{`}}`}}",
               "refId": "A"
             }
           ],
@@ -2476,7 +2476,7 @@ data:
                 "uid": "$cluster"
               },
               "expr": "increase(kube_pod_container_status_restarts_total[5m]) > 0",
-              "legendFormat": "{${container}}",
+              "legendFormat": "{{`{{`}}container{{`}}`}}",
               "refId": "A"
             }
           ],
@@ -2591,7 +2591,7 @@ data:
               },
               "expr": "sum(rate(apiserver_request_total[5m])) by (verb)",
               "interval": "",
-              "legendFormat": "{${verb}}",
+              "legendFormat": "{{`{{`}}verb{{`}}`}}",
               "refId": "A"
             }
           ],
@@ -3233,7 +3233,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
-              "legendFormat": "-> {${ kubernetes_io_role }}",
+              "legendFormat": "-> {{`{{`}}kubernetes_io_role{{`}}`}}",
               "refId": "A"
             },
             {
@@ -3244,7 +3244,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
-              "legendFormat": "<- {${ kubernetes_io_role }}",
+              "legendFormat": "<- {{`{{`}}kubernetes_io_role{{`}}`}}",
               "refId": "B"
             },
             {
@@ -3255,7 +3255,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
-              "legendFormat": "-> {${ kubernetes_io_role }}: {${ kubernetes_io_hostname }}",
+              "legendFormat": "-> {{`{{`}}kubernetes_io_role{{`}}`}}: {{`{{`}}kubernetes_io_hostname{{`}}`}}",
               "refId": "C"
             },
             {
@@ -3266,7 +3266,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
-              "legendFormat": "<- {${ kubernetes_io_role }}: {${ kubernetes_io_hostname }}",
+              "legendFormat": "<- {{`{{`}}kubernetes_io_role{{`}}`}}: {{`{{`}}kubernetes_io_hostname{{`}}`}}",
               "refId": "D"
             }
           ],
@@ -3368,7 +3368,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
-              "legendFormat": "-> {${ pod_name }}",
+              "legendFormat": "-> {{`{{`}}pod_name{{`}}`}}",
               "metric": "network",
               "refId": "A",
               "step": 10
@@ -3381,7 +3381,7 @@ data:
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
-              "legendFormat": "<- {${ pod_name }}",
+              "legendFormat": "<- {{`{{`}}pod_name{{`}}`}}",
               "metric": "network",
               "refId": "B",
               "step": 10

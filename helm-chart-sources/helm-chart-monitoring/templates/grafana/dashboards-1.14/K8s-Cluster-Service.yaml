@@ -551,7 +551,7 @@ data:
                   "expr": "count(sum by (pod)(delta(kube_pod_container_status_restarts_total[15m]) > 0))",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{${pod}}",
+                  "legendFormat": "{{`{{`}}pod{{`}}`}}",
                   "metric": "node_memory_MemTotal",
                   "refId": "A",
                   "step": 40
@@ -622,7 +622,7 @@ data:
                   "expr": "sum by (pod)(delta(kube_pod_container_status_restarts_total[15m]) > 0)",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{${pod}}",
+                  "legendFormat": "{{`{{`}}pod{{`}}`}}",
                   "refId": "A",
                   "step": 10
                 }
@@ -718,7 +718,7 @@ data:
                   "expr": "node_load1",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{${instance}}",
+                  "legendFormat": "{{`{{`}}instance{{`}}`}}",
                   "metric": "node_load1",
                   "refId": "A",
                   "step": 10
@@ -816,7 +816,7 @@ data:
                   "format": "time_series",
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "{${ instance }}",
+                  "legendFormat": "{{`{{`}}instance{{`}}`}}",
                   "refId": "A",
                   "step": 10
                 }
@@ -916,7 +916,7 @@ data:
                   "hide": false,
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "{${ phase }}",
+                  "legendFormat": "{{`{{`}}phase{{`}}`}}",
                   "metric": "kube_pod_status_phase",
                   "refId": "A",
                   "step": 10
@@ -929,7 +929,7 @@ data:
                   "expr": "kubelet_running_container_count{instance =~ \".*compute.*\"}",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{${ instance }}",
+                  "legendFormat": "{{`{{`}}instance{{`}}`}}",
                   "refId": "B",
                   "step": 10
                 }
@@ -1021,7 +1021,7 @@ data:
                   "expr": "topk(5,sum(container_memory_usage_bytes{image!=\"\"}) by (pod_name, container_name, namespace))",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{${container_name}} IN {${pod_name}} UNDER {${namespace}}",
+                  "legendFormat": "{{`{{`}}container_name{{`}}`}} IN {{`{{`}}pod_name{{`}}`}} UNDER {{`{{`}}namespace{{`}}`}}",
                   "refId": "A",
                   "step": 10
                 }
@@ -1121,7 +1121,7 @@ data:
                   "format": "time_series",
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "{${ container_name }} IN {${ pod_name }} UNDER {${namespace}}",
+                  "legendFormat": "{{`{{`}}container_name{{`}}`}} IN {{`{{`}}pod_name{{`}}`}} UNDER {{`{{`}}namespace{{`}}`}}",
                   "metric": "container_cpu_usage_seconds_total",
                   "refId": "A",
                   "step": 4
@@ -1220,7 +1220,7 @@ data:
                   "hide": false,
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "{${instance}} {${device}}",
+                  "legendFormat": "{{`{{`}}instance{{`}}`}} {{`{{`}}device{{`}}`}}",
                   "refId": "A",
                   "step": 10
                 }
@@ -1315,7 +1315,7 @@ data:
                   "format": "time_series",
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "{${ container_name }} in {${ pod_name }}",
+                  "legendFormat": "{{`{{`}}container_name{{`}}`}} in {{`{{`}}pod_name{{`}}`}}",
                   "metric": "container_cpu_usage_seconds_total",
                   "refId": "A",
                   "step": 4
