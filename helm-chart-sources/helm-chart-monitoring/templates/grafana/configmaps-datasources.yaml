@@ -71,7 +71,7 @@ data:
       url: {{ $.Values.grafana.sidecar.datasources.cloudwatch.url }}
       jsonData:
         region: us-west-2
-     
+        namespace: CWAgent
 
     # Add InfluxDB datasource
     - name: InfluxDB
