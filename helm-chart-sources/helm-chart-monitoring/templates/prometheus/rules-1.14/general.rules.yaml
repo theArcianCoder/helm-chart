@@ -95,4 +95,38 @@ spec:
 {{ toYaml .Values.defaultRules.additionalRuleLabels | indent 8 }}
 {{- end }}
 {{- end }}
+{{- if not (.Values.defaultRules.disabled.PodStatusAlert | default false) }}
+    - alert: PodStatusAlert
+      annotations:
+{{- if .Values.defaultRules.additionalRuleAnnotations }}
+{{ toYaml .Values.defaultRules.additionalRuleAnnotations | indent 8 }}
+{{- end }}
+        description: 'Alert for pod status - whether a pod is up or down.'
+        runbook_url: {{ .Values.defaultRules.runbookUrl }}/general/podstatusalert
+        summary: Pod status alert.
+      expr: kube_pod_status_phase{phase="Running"} == 0
+      for: 5m
+      labels:
+        severity: critical
+{{- if .Values.defaultRules.additionalRuleLabels }}
+{{ toYaml .Values.defaultRules.additionalRuleLabels | indent 8 }}
+{{- end }}
+{{- end }}
+{{- if not (.Values.defaultRules.disabled.ImagePullBackErrorAlert | default false) }}
+    - alert: ImagePullBackErrorAlert
+      annotations:
+{{- if .Values.defaultRules.additionalRuleAnnotations }}
+{{ toYaml .Values.defaultRules.additionalRuleAnnotations | indent 8 }}
+{{- end }}
+        description: 'Alert for image pull back errors.'
+        runbook_url: {{ .Values.defaultRules.runbookUrl }}/general/imagepullbackerroralert
+        summary: Image pull back error alert.
+      expr: kube_pod_container_status_waiting_reason{reason="ImagePullBackOff"} == 1
+      for: 5m
+      labels:
+        severity: warning
+{{- if .Values.defaultRules.additionalRuleLabels }}
+{{ toYaml .Values.defaultRules.additionalRuleLabels | indent 8 }}
+{{- end }}
+{{- end }}
 {{- end }}
