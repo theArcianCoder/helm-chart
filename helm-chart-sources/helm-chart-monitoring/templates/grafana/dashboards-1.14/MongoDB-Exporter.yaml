@@ -1808,7 +1808,7 @@ data:
                 ]
               },
               "timezone": "browser",
-              "title": "MongoDB_Prod_Overview",
+              "title": "MongoDB_Overview",
               "uid": "WH8anTCZz",
               "version": 34,
               "weekStart": ""

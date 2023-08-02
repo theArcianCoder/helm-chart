@@ -2427,7 +2427,7 @@ data:
                 ]
             },
             "timezone": "browser",
-            "title": "Cluster Monitoring",
+            "title": "Kubernetes Cluster Overview",
             "uid": "CKzH7V-4k",
             "version": 15,
             "weekStart": ""
