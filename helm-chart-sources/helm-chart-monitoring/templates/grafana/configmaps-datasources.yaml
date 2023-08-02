@@ -70,7 +70,7 @@ data:
       access: proxy
       jsonData:
         region: us-west-2
-        customMetricsNamespaces: 'CWAgent,CustomNameSpace'
+        customMetricsNamespaces: 'CWAgent'
 
     # Add InfluxDB datasource
     - name: InfluxDB
