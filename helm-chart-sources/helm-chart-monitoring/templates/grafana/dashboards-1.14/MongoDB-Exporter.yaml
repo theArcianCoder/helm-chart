@@ -1747,8 +1747,8 @@ data:
                     "allFormat": "glob",
                     "current": {
                       "selected": true,
-                      "text": "mongo-2.db.tatasky.tv:9216",
-                      "value": "mongo-2.db.tatasky.tv:9216"
+                      "text": "",
+                      "value": ""
                     },
                     "datasource": {
                       "type": "prometheus",
