@@ -20,7 +20,7 @@ metadata:
 {{ include "kube-prometheus-stack.labels" $ | indent 4 }}
 data:
   aws_ec2.json: |-
-        {
+          {
             "annotations": {
               "list": [
                 {
@@ -38,14 +38,359 @@ data:
               ]
             },
             "description": "Visualize AWS EC2 and related EBS metrics",
-            "editable": false,
+            "editable": true,
             "fiscalYearStartMonth": 0,
             "gnetId": 617,
             "graphTooltip": 0,
-            "id": 31,
             "links": [],
             "liveNow": false,
             "panels": [
+              {
+                "datasource": {
+                  "type": "cloudwatch",
+                  "uid": "${datasource}"
+                },
+                "fieldConfig": {
+                  "defaults": {
+                    "color": {
+                      "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                      "mode": "absolute",
+                      "steps": [
+                        {
+                          "color": "green",
+                          "value": null
+                        },
+                        {
+                          "color": "yellow",
+                          "value": 80
+                        }
+                      ]
+                    },
+                    "unit": "bytes"
+                  },
+                  "overrides": []
+                },
+                "gridPos": {
+                  "h": 6,
+                  "w": 4,
+                  "x": 0,
+                  "y": 0
+                },
+                "id": 20,
+                "options": {
+                  "colorMode": "value",
+                  "graphMode": "area",
+                  "justifyMode": "auto",
+                  "orientation": "auto",
+                  "reduceOptions": {
+                    "calcs": [
+                      "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                  },
+                  "textMode": "auto"
+                },
+                "pluginVersion": "9.5.2",
+                "targets": [
+                  {
+                    "datasource": {
+                      "type": "cloudwatch",
+                      "uid": "${datasource}"
+                    },
+                    "dimensions": {
+                      "InstanceId": "$instanceid",
+                      "path": "/"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "logGroups": [],
+                    "matchExact": false,
+                    "metricEditorMode": 0,
+                    "metricName": "disk_used",
+                    "metricQueryType": 0,
+                    "namespace": "CWAgent",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "us-west-2",
+                    "sqlExpression": "",
+                    "statistic": "Sum"
+                  }
+                ],
+                "title": "Disk Used",
+                "type": "stat"
+              },
+              {
+                "datasource": {
+                  "type": "cloudwatch",
+                  "uid": "${datasource}"
+                },
+                "fieldConfig": {
+                  "defaults": {
+                    "color": {
+                      "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                      "mode": "absolute",
+                      "steps": [
+                        {
+                          "color": "green",
+                          "value": null
+                        },
+                        {
+                          "color": "yellow",
+                          "value": 80
+                        }
+                      ]
+                    },
+                    "unit": "bytes"
+                  },
+                  "overrides": []
+                },
+                "gridPos": {
+                  "h": 6,
+                  "w": 4,
+                  "x": 4,
+                  "y": 0
+                },
+                "id": 21,
+                "options": {
+                  "colorMode": "value",
+                  "graphMode": "area",
+                  "justifyMode": "auto",
+                  "orientation": "auto",
+                  "reduceOptions": {
+                    "calcs": [
+                      "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                  },
+                  "textMode": "auto"
+                },
+                "pluginVersion": "9.5.2",
+                "targets": [
+                  {
+                    "datasource": {
+                      "type": "cloudwatch",
+                      "uid": "${datasource}"
+                    },
+                    "dimensions": {
+                      "InstanceId": "$instanceid",
+                      "path": "/"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "logGroups": [],
+                    "matchExact": false,
+                    "metricEditorMode": 0,
+                    "metricName": "disk_free",
+                    "metricQueryType": 0,
+                    "namespace": "CWAgent",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "$region",
+                    "sqlExpression": "",
+                    "statistic": "Sum"
+                  }
+                ],
+                "title": "Disk Free",
+                "type": "stat"
+              },
+              {
+                "datasource": {
+                  "type": "cloudwatch",
+                  "uid": "${datasource}"
+                },
+                "fieldConfig": {
+                  "defaults": {
+                    "color": {
+                      "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                      "mode": "absolute",
+                      "steps": [
+                        {
+                          "color": "green",
+                          "value": null
+                        },
+                        {
+                          "color": "yellow",
+                          "value": 80
+                        }
+                      ]
+                    },
+                    "unit": "bytes"
+                  },
+                  "overrides": []
+                },
+                "gridPos": {
+                  "h": 6,
+                  "w": 4,
+                  "x": 8,
+                  "y": 0
+                },
+                "id": 22,
+                "options": {
+                  "colorMode": "value",
+                  "graphMode": "area",
+                  "justifyMode": "auto",
+                  "orientation": "auto",
+                  "reduceOptions": {
+                    "calcs": [
+                      "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                  },
+                  "textMode": "auto"
+                },
+                "pluginVersion": "9.5.2",
+                "targets": [
+                  {
+                    "datasource": {
+                      "type": "cloudwatch",
+                      "uid": "${datasource}"
+                    },
+                    "dimensions": {
+                      "InstanceId": "$instanceid",
+                      "InstanceType": "$instancetype",
+                      "fstype": "ext4"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "logGroups": [],
+                    "matchExact": false,
+                    "metricEditorMode": 0,
+                    "metricName": "disk_total",
+                    "metricQueryType": 0,
+                    "namespace": "CWAgent",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "$region",
+                    "sqlExpression": "",
+                    "statistic": "Sum"
+                  }
+                ],
+                "title": "Disk Total",
+                "type": "stat"
+              },
+              {
+                "datasource": {
+                  "type": "cloudwatch",
+                  "uid": "${datasource}"
+                },
+                "fieldConfig": {
+                  "defaults": {
+                    "color": {
+                      "mode": "palette-classic"
+                    },
+                    "custom": {
+                      "axisCenteredZero": false,
+                      "axisColorMode": "text",
+                      "axisLabel": "",
+                      "axisPlacement": "auto",
+                      "barAlignment": 0,
+                      "drawStyle": "line",
+                      "fillOpacity": 0,
+                      "gradientMode": "none",
+                      "hideFrom": {
+                        "legend": false,
+                        "tooltip": false,
+                        "viz": false
+                      },
+                      "lineInterpolation": "linear",
+                      "lineWidth": 1,
+                      "pointSize": 5,
+                      "scaleDistribution": {
+                        "type": "linear"
+                      },
+                      "showPoints": "auto",
+                      "spanNulls": false,
+                      "stacking": {
+                        "group": "A",
+                        "mode": "none"
+                      },
+                      "thresholdsStyle": {
+                        "mode": "off"
+                      }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                      "mode": "absolute",
+                      "steps": [
+                        {
+                          "color": "green",
+                          "value": null
+                        },
+                        {
+                          "color": "red",
+                          "value": 80
+                        }
+                      ]
+                    }
+                  },
+                  "overrides": []
+                },
+                "gridPos": {
+                  "h": 6,
+                  "w": 12,
+                  "x": 12,
+                  "y": 0
+                },
+                "id": 23,
+                "options": {
+                  "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "right",
+                    "showLegend": true
+                  },
+                  "tooltip": {
+                    "mode": "single",
+                    "sort": "none"
+                  }
+                },
+                "targets": [
+                  {
+                    "datasource": {
+                      "type": "cloudwatch",
+                      "uid": "${datasource}"
+                    },
+                    "dimensions": {
+                      "InstanceId": "$instanceid"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "logGroups": [],
+                    "matchExact": false,
+                    "metricEditorMode": 0,
+                    "metricName": "disk_used_percent",
+                    "metricQueryType": 0,
+                    "namespace": "CWAgent",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "$region",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                  }
+                ],
+                "title": "Disk Used %",
+                "type": "timeseries"
+              },
               {
                 "aliasColors": {},
                 "bars": false,
@@ -63,7 +408,7 @@ data:
                   "h": 7,
                   "w": 24,
                   "x": 0,
-                  "y": 0
+                  "y": 6
                 },
                 "hiddenSeries": false,
                 "id": 7,
@@ -180,7 +525,7 @@ data:
                   "h": 7,
                   "w": 24,
                   "x": 0,
-                  "y": 7
+                  "y": 13
                 },
                 "hiddenSeries": false,
                 "id": 8,
@@ -331,7 +676,7 @@ data:
                   "h": 7,
                   "w": 24,
                   "x": 0,
-                  "y": 14
+                  "y": 20
                 },
                 "hiddenSeries": false,
                 "id": 9,
@@ -476,13 +821,15 @@ data:
                 "editable": true,
                 "error": false,
                 "fill": 1,
+                "fillGradient": 0,
                 "grid": {},
                 "gridPos": {
                   "h": 7,
                   "w": 24,
                   "x": 0,
-                  "y": 21
+                  "y": 27
                 },
+                "hiddenSeries": false,
                 "id": 10,
                 "legend": {
                   "alignAsTable": true,
@@ -500,7 +847,11 @@ data:
                 "linewidth": 2,
                 "links": [],
                 "nullPointMode": "connected",
+                "options": {
+                  "alertThreshold": true
+                },
                 "percentage": false,
+                "pluginVersion": "9.5.2",
                 "pointradius": 5,
                 "points": false,
                 "renderer": "flot",
@@ -579,6 +930,7 @@ data:
                   }
                 ],
                 "thresholds": [],
+                "timeRegions": [],
                 "title": "DiskBytes",
                 "tooltip": {
                   "msResolution": false,
@@ -625,7 +977,7 @@ data:
                   "h": 7,
                   "w": 24,
                   "x": 0,
-                  "y": 28
+                  "y": 34
                 },
                 "id": 11,
                 "legend": {
@@ -769,7 +1121,7 @@ data:
                   "h": 7,
                   "w": 24,
                   "x": 0,
-                  "y": 35
+                  "y": 41
                 },
                 "id": 12,
                 "legend": {
@@ -913,7 +1265,7 @@ data:
                   "h": 7,
                   "w": 24,
                   "x": 0,
-                  "y": 42
+                  "y": 48
                 },
                 "id": 13,
                 "legend": {
@@ -1091,7 +1443,7 @@ data:
                   "h": 7,
                   "w": 24,
                   "x": 0,
-                  "y": 49
+                  "y": 55
                 },
                 "id": 14,
                 "legend": {
@@ -1235,7 +1587,7 @@ data:
                   "h": 7,
                   "w": 24,
                   "x": 0,
-                  "y": 56
+                  "y": 62
                 },
                 "id": 15,
                 "legend": {
@@ -1379,7 +1731,7 @@ data:
                   "h": 7,
                   "w": 24,
                   "x": 0,
-                  "y": 63
+                  "y": 69
                 },
                 "id": 16,
                 "legend": {
@@ -1494,7 +1846,7 @@ data:
                   "h": 7,
                   "w": 24,
                   "x": 0,
-                  "y": 70
+                  "y": 76
                 },
                 "id": 17,
                 "legend": {
@@ -1677,7 +2029,7 @@ data:
                   "h": 7,
                   "w": 24,
                   "x": 0,
-                  "y": 77
+                  "y": 83
                 },
                 "id": 18,
                 "legend": {
@@ -1831,7 +2183,7 @@ data:
                   "h": 7,
                   "w": 24,
                   "x": 0,
-                  "y": 84
+                  "y": 90
                 },
                 "id": 19,
                 "legend": {
@@ -1947,7 +2299,7 @@ data:
                   "h": 3,
                   "w": 24,
                   "x": 0,
-                  "y": 91
+                  "y": 97
                 },
                 "id": 2,
                 "links": [],
@@ -1994,9 +2346,9 @@ data:
                 },
                 {
                   "current": {
-                    "selected": false,
-                    "text": "default",
-                    "value": "default"
+                    "selected": true,
+                    "text": "us-west-2",
+                    "value": "us-west-2"
                   },
                   "datasource": {
                     "uid": "${datasource}"
@@ -2020,16 +2372,15 @@ data:
                 },
                 {
                   "allValue": "*",
-                  "current": {},
+                  "current": {
+                    "selected": false,
+                    "text": "Monitoring-setup",
+                    "value": "Monitoring-setup"
+                  },
                   "datasource": {
                     "uid": "${datasource}"
                   },
                   "definition": "",
-                  "error": {
-                    "data": {
-                      "message": "Unexpected error"
-                    }
-                  },
                   "hide": 0,
                   "includeAll": true,
                   "label": "Tag Name",
@@ -2047,16 +2398,15 @@ data:
                   "useTags": false
                 },
                 {
-                  "current": {},
+                  "current": {
+                    "selected": false,
+                    "text": "i-0b3d0532a8df99dd3",
+                    "value": "i-0b3d0532a8df99dd3"
+                  },
                   "datasource": {
                     "uid": "${datasource}"
                   },
                   "definition": "",
-                  "error": {
-                    "data": {
-                      "message": "Unexpected error"
-                    }
-                  },
                   "hide": 0,
                   "includeAll": false,
                   "label": "Instance ID",
@@ -2075,16 +2425,15 @@ data:
                 },
                 {
                   "allValue": "*",
-                  "current": {},
+                  "current": {
+                    "selected": false,
+                    "text": "vol-0c48495c98f0d0046",
+                    "value": "vol-0c48495c98f0d0046"
+                  },
                   "datasource": {
                     "uid": "${datasource}"
                   },
                   "definition": "",
-                  "error": {
-                    "data": {
-                      "message": "Unexpected error"
-                    }
-                  },
                   "hide": 0,
                   "includeAll": false,
                   "label": "EBS volume",
@@ -2103,16 +2452,15 @@ data:
                 },
                 {
                   "allValue": "*",
-                  "current": {},
+                  "current": {
+                    "selected": false,
+                    "text": "t2.large",
+                    "value": "t2.large"
+                  },
                   "datasource": {
                     "uid": "${datasource}"
                   },
                   "definition": "",
-                  "error": {
-                    "data": {
-                      "message": "Unexpected error"
-                    }
-                  },
                   "hide": 0,
                   "includeAll": false,
                   "label": "Info InstanceType",
