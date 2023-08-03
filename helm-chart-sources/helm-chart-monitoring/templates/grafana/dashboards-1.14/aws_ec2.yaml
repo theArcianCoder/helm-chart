@@ -37,6 +37,377 @@ data:
                 }
               ]
             },
+            "editable": true,
+            "fiscalYearStartMonth": 0,
+            "graphTooltip": 0,
+            "id": 14,
+            "links": [],
+            "liveNow": false,
+            "panels": [
+              {
+                "collapsed": false,
+                "gridPos": {
+                  "h": 1,
+                  "w": 24,
+                  "x": 0,
+                  "y": 0
+                },
+                "id": 4,
+                "panels": [],
+                "title": "Disk Metrics",
+                "type": "row"
+              },
+              {
+                "datasource": {
+                  "uid": "${datasource}"
+                },
+                "fieldConfig": {
+                  "defaults": {
+                    "color": {
+                      "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                      "mode": "absolute",
+                      "steps": [
+                        {
+                          "color": "green",
+                          "value": null
+                        },
+                        {
+                          "color": "yellow",
+                          "value": 80
+                        }
+                      ]
+                    },
+                    "unit": "bytes"
+                  },
+                  "overrides": []
+                },
+                "gridPos": {
+                  "h": 5,
+                  "w": 4,
+                  "x": 0,
+                  "y": 1
+                },
+                "id": 3,
+                "options": {
+                  "colorMode": "value",
+                  "graphMode": "area",
+                  "justifyMode": "auto",
+                  "orientation": "auto",
+                  "reduceOptions": {
+                    "calcs": [
+                      "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                  },
+                  "textMode": "auto"
+                },
+                "pluginVersion": "9.5.2",
+                "targets": [
+                  {
+                    "datasource": {
+                      "uid": "${datasource}"
+                    },
+                    "dimensions": {
+                      "InstanceId": "$instanceid"
+                      "path": "/"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "logGroups": [],
+                    "matchExact": false,
+                    "metricEditorMode": 0,
+                    "metricName": "disk_used",
+                    "metricQueryType": 0,
+                    "namespace": "CWAgent",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "$region",
+                    "sqlExpression": "",
+                    "statistic": "Sum"
+                  }
+                ],
+                "title": "Disk Used",
+                "type": "stat"
+              },
+              {
+                "datasource": {
+                  "uid": "${datasource}"
+                },
+                "fieldConfig": {
+                  "defaults": {
+                    "color": {
+                      "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                      "mode": "absolute",
+                      "steps": [
+                        {
+                          "color": "green",
+                          "value": null
+                        },
+                        {
+                          "color": "yellow",
+                          "value": 80
+                        }
+                      ]
+                    },
+                    "unit": "bytes"
+                  },
+                  "overrides": []
+                },
+                "gridPos": {
+                  "h": 5,
+                  "w": 4,
+                  "x": 4,
+                  "y": 1
+                },
+                "id": 1,
+                "options": {
+                  "colorMode": "value",
+                  "graphMode": "area",
+                  "justifyMode": "auto",
+                  "orientation": "auto",
+                  "reduceOptions": {
+                    "calcs": [
+                      "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                  },
+                  "textMode": "auto"
+                },
+                "pluginVersion": "9.5.2",
+                "targets": [
+                  {
+                    "datasource": {
+                      "uid": "${datasource}"
+                    },
+                    "dimensions": {
+                      "InstanceId": "$instanceid"
+                      "path": "/"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "logGroups": [],
+                    "matchExact": false,
+                    "metricEditorMode": 0,
+                    "metricName": "disk_free",
+                    "metricQueryType": 0,
+                    "namespace": "CWAgent",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "$region",
+                    "sqlExpression": "",
+                    "statistic": "Sum"
+                  }
+                ],
+                "title": "Disk Free",
+                "type": "stat"
+              },
+              {
+                "datasource": {
+                  "uid": "${datasource}"
+                },
+                "fieldConfig": {
+                  "defaults": {
+                    "color": {
+                      "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                      "mode": "absolute",
+                      "steps": [
+                        {
+                          "color": "green",
+                          "value": null
+                        },
+                        {
+                          "color": "yellow",
+                          "value": 80
+                        }
+                      ]
+                    },
+                    "unit": "bytes"
+                  },
+                  "overrides": []
+                },
+                "gridPos": {
+                  "h": 5,
+                  "w": 4,
+                  "x": 8,
+                  "y": 1
+                },
+                "id": 2,
+                "options": {
+                  "colorMode": "value",
+                  "graphMode": "area",
+                  "justifyMode": "auto",
+                  "orientation": "auto",
+                  "reduceOptions": {
+                    "calcs": [
+                      "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                  },
+                  "textMode": "auto"
+                },
+                "pluginVersion": "9.5.2",
+                "targets": [
+                  {
+                    "datasource": {
+                      "uid": "${datasource}"
+                    },
+                    "dimensions": {
+                      "InstanceId": "$instanceid"
+                      "InstanceType": "t2.large",
+                      "fstype": "ext4"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "logGroups": [],
+                    "matchExact": false,
+                    "metricEditorMode": 0,
+                    "metricName": "disk_total",
+                    "metricQueryType": 0,
+                    "namespace": "CWAgent",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "$region",
+                    "sqlExpression": "",
+                    "statistic": "Sum"
+                  }
+                ],
+                "title": "Disk Total",
+                "type": "stat"
+              },
+              {
+                "datasource": {
+                  "uid": "${datasource}"
+                },
+                "fieldConfig": {
+                  "defaults": {
+                    "color": {
+                      "mode": "palette-classic"
+                    },
+                    "custom": {
+                      "axisCenteredZero": false,
+                      "axisColorMode": "text",
+                      "axisLabel": "",
+                      "axisPlacement": "auto",
+                      "barAlignment": 0,
+                      "drawStyle": "line",
+                      "fillOpacity": 0,
+                      "gradientMode": "none",
+                      "hideFrom": {
+                        "legend": false,
+                        "tooltip": false,
+                        "viz": false
+                      },
+                      "lineInterpolation": "linear",
+                      "lineWidth": 1,
+                      "pointSize": 5,
+                      "scaleDistribution": {
+                        "type": "linear"
+                      },
+                      "showPoints": "auto",
+                      "spanNulls": false,
+                      "stacking": {
+                        "group": "A",
+                        "mode": "none"
+                      },
+                      "thresholdsStyle": {
+                        "mode": "off"
+                      }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                      "mode": "absolute",
+                      "steps": [
+                        {
+                          "color": "green",
+                          "value": null
+                        },
+                        {
+                          "color": "red",
+                          "value": 80
+                        }
+                      ]
+                    }
+                  },
+                  "overrides": []
+                },
+                "gridPos": {
+                  "h": 5,
+                  "w": 12,
+                  "x": 12,
+                  "y": 1
+                },
+                "id": 5,
+                "options": {
+                  "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "right",
+                    "showLegend": true
+                  },
+                  "tooltip": {
+                    "mode": "single",
+                    "sort": "none"
+                  }
+                },
+                "pluginVersion": "9.5.2",
+                "targets": [
+                  {
+                    "datasource": {
+                      "uid": "${datasource}"
+                    },
+                    "dimensions": {
+                      "InstanceId": "i-0b3d0532a8df99dd3"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "logGroups": [],
+                    "matchExact": false,
+                    "metricEditorMode": 0,
+                    "metricName": "disk_used_percent",
+                    "metricQueryType": 0,
+                    "namespace": "CWAgent",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "$region",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                  }
+                ],
+                "title": "Disk Used %",
+                "type": "timeseries"
+              }
+            ],
+            "refresh": "",
+            "schemaVersion": 38,
+            "style": "dark",
+            "tags": [],
+            "templating": {
+              "list": []
+            },
+            "time": {
+              "from": "now-6h",
+              "to": "now"
+            },
             "description": "Visualize AWS EC2 and related EBS metrics",
             "editable": false,
             "fiscalYearStartMonth": 0,
