@@ -46,8 +46,7 @@ data:
               "editable": true,
               "fiscalYearStartMonth": 0,
               "graphTooltip": 0,
-              "id": 3,
-              "iteration": 1687774652255,
+              "id": 10,
               "links": [],
               "liveNow": false,
               "panels": [
@@ -98,6 +97,8 @@ data:
                         "mode": "palette-classic"
                       },
                       "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
                         "axisLabel": "",
                         "axisPlacement": "auto",
                         "barAlignment": 0,
@@ -180,7 +181,8 @@ data:
                         "firstNotNull"
                       ],
                       "displayMode": "list",
-                      "placement": "bottom"
+                      "placement": "bottom",
+                      "showLegend": true
                     },
                     "tooltip": {
                       "mode": "single",
@@ -197,7 +199,7 @@ data:
                       "exemplar": false,
                       "expr": "(node_memory_MemFree_bytes / node_memory_MemTotal_bytes) * 100",
                       "instant": false,
-                      "legendFormat": "{{`{{`}}instance{{`}}`}}",
+                      "legendFormat": "{{instance}}",
                       "range": true,
                       "refId": "A"
                     }
@@ -264,6 +266,8 @@ data:
                         "mode": "palette-classic"
                       },
                       "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
                         "axisLabel": "",
                         "axisPlacement": "auto",
                         "barAlignment": 0,
@@ -319,7 +323,8 @@ data:
                     "legend": {
                       "calcs": [],
                       "displayMode": "list",
-                      "placement": "bottom"
+                      "placement": "bottom",
+                      "showLegend": true
                     },
                     "tooltip": {
                       "mode": "single",
@@ -334,7 +339,7 @@ data:
                       },
                       "editorMode": "code",
                       "expr": "100 - (100 * ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\"} )  / (node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"}) ))\n",
-                      "legendFormat": "{{`{{`}}instance{{`}}`}}",
+                      "legendFormat": "{{instance}}",
                       "range": true,
                       "refId": "A"
                     }
@@ -401,6 +406,8 @@ data:
                         "mode": "palette-classic"
                       },
                       "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
                         "axisLabel": "",
                         "axisPlacement": "auto",
                         "barAlignment": 0,
@@ -456,7 +463,8 @@ data:
                     "legend": {
                       "calcs": [],
                       "displayMode": "list",
-                      "placement": "bottom"
+                      "placement": "bottom",
+                      "showLegend": true
                     },
                     "tooltip": {
                       "mode": "single",
@@ -471,7 +479,7 @@ data:
                       },
                       "editorMode": "code",
                       "expr": "(sum(increase(kube_pod_container_status_restarts_total[5m])) by (exported_pod))",
-                      "legendFormat": "{{`{{`}}exported_pod{{`}}`}}",
+                      "legendFormat": "{{exported_pod}}",
                       "range": true,
                       "refId": "A"
                     }
@@ -538,6 +546,8 @@ data:
                         "mode": "palette-classic"
                       },
                       "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
                         "axisLabel": "",
                         "axisPlacement": "auto",
                         "barAlignment": 0,
@@ -593,7 +603,8 @@ data:
                     "legend": {
                       "calcs": [],
                       "displayMode": "list",
-                      "placement": "bottom"
+                      "placement": "bottom",
+                      "showLegend": true
                     },
                     "tooltip": {
                       "mode": "single",
@@ -608,7 +619,7 @@ data:
                       },
                       "editorMode": "code",
                       "expr": "kube_horizontalpodautoscaler_status_current_replicas / kube_horizontalpodautoscaler_spec_max_replicas * 100 ",
-                      "legendFormat": "{{`{{`}}horizontalpodautoscaler{{`}}`}}",
+                      "legendFormat": "{{horizontalpodautoscaler}}",
                       "range": true,
                       "refId": "A"
                     }
@@ -675,6 +686,8 @@ data:
                         "mode": "palette-classic"
                       },
                       "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
                         "axisLabel": "",
                         "axisPlacement": "auto",
                         "barAlignment": 0,
@@ -730,7 +743,8 @@ data:
                     "legend": {
                       "calcs": [],
                       "displayMode": "list",
-                      "placement": "bottom"
+                      "placement": "bottom",
+                      "showLegend": true
                     },
                     "tooltip": {
                       "mode": "single",
@@ -745,7 +759,7 @@ data:
                       },
                       "editorMode": "code",
                       "expr": "count(kube_pod_container_status_waiting_reason{reason=\"CrashLoopBackOff\"} == 1) by (exported_pod)",
-                      "legendFormat": "{{`{{`}}exported_pod{{`}}`}}",
+                      "legendFormat": "{{exported_pod}}",
                       "range": true,
                       "refId": "A"
                     }
@@ -808,6 +822,8 @@ data:
                         "mode": "palette-classic"
                       },
                       "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
                         "axisLabel": "",
                         "axisPlacement": "auto",
                         "barAlignment": 0,
@@ -863,7 +879,8 @@ data:
                     "legend": {
                       "calcs": [],
                       "displayMode": "list",
-                      "placement": "bottom"
+                      "placement": "bottom",
+                      "showLegend": true
                     },
                     "tooltip": {
                       "mode": "single",
@@ -878,7 +895,7 @@ data:
                       },
                       "editorMode": "code",
                       "expr": "count(kube_pod_status_phase{ phase=\"Pending\"} == 1) by (exported_pod)",
-                      "legendFormat": "{{`{{`}}exported_pod{{`}}`}}",
+                      "legendFormat": "{{exported_pod}}",
                       "range": true,
                       "refId": "A"
                     }
@@ -941,6 +958,8 @@ data:
                         "mode": "palette-classic"
                       },
                       "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
                         "axisLabel": "",
                         "axisPlacement": "auto",
                         "barAlignment": 0,
@@ -1021,7 +1040,8 @@ data:
                     "legend": {
                       "calcs": [],
                       "displayMode": "list",
-                      "placement": "bottom"
+                      "placement": "bottom",
+                      "showLegend": true
                     },
                     "tooltip": {
                       "mode": "single",
@@ -1037,7 +1057,7 @@ data:
                       "editorMode": "code",
                       "expr": "count(kube_pod_container_status_waiting_reason{reason=\"ErrImagePull\"} == 1) by (exported_pod)",
                       "format": "time_series",
-                      "legendFormat": "{{`{{`}}exported_pod{{`}}`}}",
+                      "legendFormat": "{{exported_pod}}",
                       "range": true,
                       "refId": "A"
                     }
@@ -1104,6 +1124,8 @@ data:
                         "mode": "palette-classic"
                       },
                       "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
                         "axisLabel": "",
                         "axisPlacement": "auto",
                         "barAlignment": 0,
@@ -1159,7 +1181,8 @@ data:
                     "legend": {
                       "calcs": [],
                       "displayMode": "list",
-                      "placement": "bottom"
+                      "placement": "bottom",
+                      "showLegend": true
                     },
                     "tooltip": {
                       "mode": "single",
@@ -1174,7 +1197,7 @@ data:
                       },
                       "editorMode": "code",
                       "expr": "count(kube_pod_container_status_waiting_reason{reason=\"ImagePullBackOff\"} == 1) by (exported_pod)",
-                      "legendFormat": "{{`{{`}}exported_pod{{`}}`}}",
+                      "legendFormat": "{{exported_pod}}",
                       "range": true,
                       "refId": "A"
                     }
@@ -1241,6 +1264,8 @@ data:
                         "mode": "palette-classic"
                       },
                       "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
                         "axisLabel": "",
                         "axisPlacement": "auto",
                         "barAlignment": 0,
@@ -1296,7 +1321,8 @@ data:
                     "legend": {
                       "calcs": [],
                       "displayMode": "list",
-                      "placement": "bottom"
+                      "placement": "bottom",
+                      "showLegend": true
                     },
                     "tooltip": {
                       "mode": "single",
@@ -1311,7 +1337,7 @@ data:
                       },
                       "editorMode": "code",
                       "expr": "count(kube_pod_status_phase{phase=\"Failed\"}== 1) by (exported_pod)",
-                      "legendFormat": "{{`{{`}}exported_pod{{`}}`}}",
+                      "legendFormat": "{{exported_pod}}",
                       "range": true,
                       "refId": "A"
                     }
@@ -1329,7 +1355,7 @@ data:
                 }
               ],
               "refresh": "",
-              "schemaVersion": 36,
+              "schemaVersion": 38,
               "style": "dark",
               "tags": [],
               "templating": {
@@ -1362,7 +1388,7 @@ data:
               "timezone": "",
               "title": "Alerting - Pods/Nodes",
               "uid": "_t4s_-bVz",
-              "version": 3,
+              "version": 1,
               "weekStart": ""
             }
 {{- end}}
