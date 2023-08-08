@@ -3080,9 +3080,9 @@ prometheus:
     ## port to 2379 and allow etcd scraping provided it is running on all Kubernetes master nodes
     ##
     additionalScrapeConfigs: 
-       - job_name: 'blackbox'
+       - job_name: 'kube-state-metrics-1'
          static_configs:
-           - targets: ['b-exporter-prometheus-blackbox-exporter.default:9115']
+           - targets: ['watchereye-kube-state-metrics.default:8080']
   
     #   kubernetes_sd_configs:
     #     - role: node
