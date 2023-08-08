@@ -3082,7 +3082,7 @@ prometheus:
     additionalScrapeConfigs: 
        - job_name: 'kube-state-metrics-1'
          static_configs:
-           - targets: ['watchereye-kube-state-metrics.default:8080']
+           - targets: ['watchereye-kube-state-metrics.kube-system:8080']
   
     #   kubernetes_sd_configs:
     #     - role: node
