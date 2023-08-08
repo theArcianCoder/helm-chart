@@ -149,7 +149,7 @@ data:
                         "exemplar": true,
                         "expr": "up{job=\"apiserver\"}",
                         "interval": "",
-                        "legendFormat": "{{ instance }}",
+                        "legendFormat": "{{`{{`}}instance{{`}}`}}",
                         "refId": "A"
                       }
                     ],
@@ -407,7 +407,7 @@ data:
                         "exemplar": true,
                         "expr": "sum by (code) (rate(apiserver_request_total[$__rate_interval]))",
                         "interval": "$resolution",
-                        "legendFormat": "{{ code }}",
+                        "legendFormat": "{{`{{`}}code{{`}}`}}",
                         "refId": "A"
                       }
                     ],
@@ -501,7 +501,7 @@ data:
                         "exemplar": true,
                         "expr": "sum by (verb) (rate(apiserver_request_total[$__rate_interval]))",
                         "interval": "$resolution",
-                        "legendFormat": "{{ verb}}",
+                        "legendFormat": "{{`{{`}}verb{{`}}`}}",
                         "refId": "A"
                       }
                     ],
@@ -595,7 +595,7 @@ data:
                         "exemplar": true,
                         "expr": "sum(rate(apiserver_request_duration_seconds_bucket{job=\"apiserver\"}[$__rate_interval])) by (instance)",
                         "interval": "$resolution",
-                        "legendFormat": "{{ instance }}",
+                        "legendFormat": "{{`{{`}}instance{{`}}`}}",
                         "refId": "A"
                       }
                     ],
@@ -689,7 +689,7 @@ data:
                         "exemplar": true,
                         "expr": "sum(rate(apiserver_request_duration_seconds_bucket{job=\"apiserver\"}[$__rate_interval])) by (verb)",
                         "interval": "$resolution",
-                        "legendFormat": "{{ verb }}",
+                        "legendFormat": "{{`{{`}}verb{{`}}`}}",
                         "refId": "A"
                       }
                     ],
@@ -783,7 +783,7 @@ data:
                         "exemplar": true,
                         "expr": "sum by(instance) (rate(apiserver_request_total{code=~\"5..\", job=\"apiserver\"}[$__rate_interval]))\n / sum by(instance) (rate(apiserver_request_total{job=\"apiserver\"}[$__rate_interval]))",
                         "interval": "$resolution",
-                        "legendFormat": "{{ instance }}",
+                        "legendFormat": "{{`{{`}}instance{{`}}`}}",
                         "refId": "A"
                       }
                     ],
@@ -877,7 +877,7 @@ data:
                         "exemplar": true,
                         "expr": "sum by(verb) (rate(apiserver_request_total{code=~\"5..\",job=\"apiserver\"}[$__rate_interval]))\n / sum by(verb) (rate(apiserver_request_total{job=\"apiserver\"}[$__rate_interval]))",
                         "interval": "$resolution",
-                        "legendFormat": "{{ verb }}",
+                        "legendFormat": "{{`{{`}}verb{{`}}`}}",
                         "refId": "A"
                       }
                     ],
@@ -971,7 +971,7 @@ data:
                         "exemplar": true,
                         "expr": "sum(rate(apiserver_request_total[$__rate_interval])) by (instance)",
                         "interval": "$resolution",
-                        "legendFormat": "{{ instance }}",
+                        "legendFormat": "{{`{{`}}instance{{`}}`}}",
                         "refId": "A"
                       }
                     ],
@@ -1065,7 +1065,7 @@ data:
                         "exemplar": true,
                         "expr": "sum(rate(workqueue_depth{job=\"apiserver\"}[$__rate_interval])) by (instance)",
                         "interval": "$resolution",
-                        "legendFormat": "{{ instance }}",
+                        "legendFormat": "{{`{{`}}instance{{`}}`}}",
                         "refId": "A"
                       }
                     ],
@@ -1160,7 +1160,7 @@ data:
                         "exemplar": true,
                         "expr": "rate(process_cpu_seconds_total{job=\"apiserver\"}[$__rate_interval])",
                         "interval": "$resolution",
-                        "legendFormat": "{{ instance }}",
+                        "legendFormat": "{{`{{`}}instance{{`}}`}}",
                         "refId": "A"
                       }
                     ],
@@ -1254,7 +1254,7 @@ data:
                         "exemplar": true,
                         "expr": "process_resident_memory_bytes{job=\"apiserver\"}",
                         "interval": "$resolution",
-                        "legendFormat": "{{ instance }}",
+                        "legendFormat": "{{`{{`}}instance{{`}}`}}",
                         "refId": "A"
                       }
                     ],

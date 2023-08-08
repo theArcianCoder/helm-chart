@@ -962,7 +962,7 @@ data:
                     "hide": false,
                     "instant": false,
                     "interval": "$resolution",
-                    "legendFormat": "{{ mode }}",
+                    "legendFormat": "{{`{{`}}mode{{`}}`}}",
                     "refId": "A"
                   }
                 ],
@@ -1225,7 +1225,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(rate(container_cpu_usage_seconds_total{node=\"$node\", image!=\"\"}[$__rate_interval])) by (pod)",
                     "interval": "$resolution",
-                    "legendFormat": "{{ pod }}",
+                    "legendFormat": "{{`{{`}}pod{{`}}`}}",
                     "refId": "A"
                   }
                 ],
@@ -1319,7 +1319,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(container_memory_working_set_bytes{node=\"$node\", image!=\"\"}) by (pod)",
                     "interval": "$resolution",
-                    "legendFormat": "{{ pod }}",
+                    "legendFormat": "{{`{{`}}pod{{`}}`}}",
                     "refId": "A"
                   }
                 ],
@@ -2686,7 +2686,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(kubelet_volume_stats_used_bytes{node=\"$node\"}) by (persistentvolumeclaim) / sum(kubelet_volume_stats_capacity_bytes{node=\"$node\"}) by (persistentvolumeclaim)",
                     "interval": "$resolution",
-                    "legendFormat": "{{ persistentvolumeclaim }}",
+                    "legendFormat": "{{`{{`}} persistentvolumeclaim{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -2941,7 +2941,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(kubelet_volume_stats_inodes_used{node=\"$node\"}) by (persistentvolumeclaim) / sum(kubelet_volume_stats_inodes{node=\"$node\"}) by (persistentvolumeclaim) * 100",
                     "interval": "$resolution",
-                    "legendFormat": "{{ persistentvolumeclaim }}",
+                    "legendFormat": "{{`{{`}} persistentvolumeclaim{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -3056,7 +3056,7 @@ data:
                     "expr": "100 - ((node_filesystem_avail_bytes{instance=\"$instance\"} * 100) / node_filesystem_size_bytes{instance=\"$instance\"})",
                     "hide": false,
                     "interval": "$resolution",
-                    "legendFormat": "{{ mountpoint }}",
+                    "legendFormat": "{{`{{`}}mountpoint{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -3154,7 +3154,7 @@ data:
                     "expr": "100 - (node_filesystem_files_free{instance=\"$instance\"} / node_filesystem_files{instance=\"$instance\"} * 100)",
                     "hide": false,
                     "interval": "$resolution",
-                    "legendFormat": "{{ mountpoint }}",
+                    "legendFormat": "{{`{{`}}mountpoint{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -3251,7 +3251,7 @@ data:
                     "exemplar": true,
                     "expr": "rate(node_disk_read_bytes_total{instance=\"$instance\"}[$__rate_interval])",
                     "interval": "$resolution",
-                    "legendFormat": "{{device}}",
+                    "legendFormat": "{{`{{`}}device{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -3349,7 +3349,7 @@ data:
                     "expr": "rate(node_disk_written_bytes_total{instance=\"$instance\"}[$__rate_interval])",
                     "hide": false,
                     "interval": "$resolution",
-                    "legendFormat": "{{device}}",
+                    "legendFormat": "{{`{{`}}device{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -3446,7 +3446,7 @@ data:
                     "exemplar": true,
                     "expr": "rate(node_disk_reads_completed_total{instance=\"$instance\"}[$__rate_interval])",
                     "interval": "$resolution",
-                    "legendFormat": "{{device}}",
+                    "legendFormat": "{{`{{`}}device{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -3544,7 +3544,7 @@ data:
                     "expr": "rate(node_disk_writes_completed_total{instance=\"$instance\"}[$__rate_interval])",
                     "hide": false,
                     "interval": "$resolution",
-                    "legendFormat": "{{device}}",
+                    "legendFormat": "{{`{{`}}device{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -3641,7 +3641,7 @@ data:
                     "exemplar": true,
                     "expr": "rate(node_disk_io_now{instance=\"$instance\"}[$__rate_interval]) ",
                     "interval": "$resolution",
-                    "legendFormat": "{{device}}",
+                    "legendFormat": "{{`{{`}}device{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -3738,7 +3738,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(node_filesystem_device_error) by (mountpoint)",
                     "interval": "$resolution",
-                    "legendFormat": "{{ mountpoint }}",
+                    "legendFormat": "{{`{{`}}mountpoint{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -3754,8 +3754,7 @@ data:
               "Kubernetes",
               "Prometheus"
             ],
-            "templating": {
-              "list": [
+            "templating": {{{device}}
                 {
                   "current": {
                     "selected": false,

@@ -1242,7 +1242,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(rate(container_cpu_usage_seconds_total{image!=\"\"}[$__rate_interval])) by (namespace)",
                     "interval": "$resolution",
-                    "legendFormat": "{{ namespace }}",
+                    "legendFormat": "{{`{{`}}namespace{{`}}`}}",
                     "refId": "A"
                   }
                 ],
@@ -1342,7 +1342,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(container_memory_working_set_bytes{image!=\"\"}) by (namespace)",
                     "interval": "$resolution",
-                    "legendFormat": "{{ namespace }}",
+                    "legendFormat": "{{`{{`}}namespace{{`}}`}}",
                     "refId": "A"
                   }
                 ],
@@ -1443,7 +1443,7 @@ data:
                     "exemplar": true,
                     "expr": "avg(1-rate(node_cpu_seconds_total{mode=\"idle\"}[$__rate_interval])) by (instance)",
                     "interval": "$resolution",
-                    "legendFormat": "{{ node }}",
+                    "legendFormat": "{{`{{`}}node{{`}}`}}",
                     "refId": "A"
                   }
                 ],
@@ -1544,7 +1544,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) by (instance)",
                     "interval": "$resolution",
-                    "legendFormat": "{{ node}}",
+                    "legendFormat": "{{`{{`}}node{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -1651,7 +1651,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(rate(container_cpu_cfs_throttled_seconds_total{image!=\"\"}[$__rate_interval])) by (namespace) > 0",
                     "interval": "$resolution",
-                    "legendFormat": "{{ namespace }}",
+                    "legendFormat": "{{`{{`}}namespace{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -1758,7 +1758,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(rate(node_cpu_core_throttles_total[$__rate_interval])) by (instance)",
                     "interval": "$resolution",
-                    "legendFormat": "{{ instance }}",
+                    "legendFormat": "{{`{{`}}instance{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -1873,7 +1873,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(kube_pod_status_qos_class) by (qos_class)",
                     "interval": "",
-                    "legendFormat": "{{ qos_class }} pods",
+                    "legendFormat": "{{`{{`}}qos_class{{`}}`}} pods",
                     "range": true,
                     "refId": "A"
                   },
@@ -1987,7 +1987,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(kube_pod_status_reason) by (reason)",
                     "interval": "",
-                    "legendFormat": "{{ reason }}",
+                    "legendFormat": "{{`{{`}}reason{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -2090,7 +2090,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(increase(container_oom_events_total[$__rate_interval])) by (namespace) > 0",
                     "interval": "",
-                    "legendFormat": "{{ namespace }}",
+                    "legendFormat": "{{`{{`}}namespace{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -2193,7 +2193,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(increase(kube_pod_container_status_restarts_total[$__rate_interval])) by (namespace) > 0",
                     "interval": "",
-                    "legendFormat": "{{ namespace }}",
+                    "legendFormat": "{{`{{`}}namespace{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -2307,7 +2307,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(rate(node_network_receive_bytes_total{device!~\"lxc.*|veth.*\"}[$__rate_interval])) by (device)",
                     "interval": "$resolution",
-                    "legendFormat": "Received : {{ device }}",
+                    "legendFormat": "Received : {{`{{`}}device{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   },
@@ -2320,7 +2320,7 @@ data:
                     "exemplar": true,
                     "expr": "- sum(rate(node_network_transmit_bytes_total{device!~\"lxc.*|veth.*\"}[$__rate_interval]))  by (device)",
                     "interval": "$resolution",
-                    "legendFormat": "Transmitted : {{ device }}",
+                    "legendFormat": "Transmitted : {{`{{`}}device{{`}}`}}",
                     "range": true,
                     "refId": "B"
                   }
@@ -2525,7 +2525,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(rate(container_network_receive_bytes_total[$__rate_interval])) by (namespace)",
                     "interval": "$resolution",
-                    "legendFormat": "Received : {{ namespace }}",
+                    "legendFormat": "Received : {{`{{`}}namespace{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   },
@@ -2538,7 +2538,7 @@ data:
                     "expr": "- sum(rate(container_network_transmit_bytes_total[$__rate_interval])) by (namespace)",
                     "hide": false,
                     "interval": "$resolution",
-                    "legendFormat": "Transmitted : {{ namespace }}",
+                    "legendFormat": "Transmitted : {{`{{`}}namespace{{`}}`}}",
                     "range": true,
                     "refId": "B"
                   }
@@ -2634,7 +2634,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(rate(node_network_receive_bytes_total[$__rate_interval])) by (instance)",
                     "interval": "$resolution",
-                    "legendFormat": "Received bytes in {{ instance }}",
+                    "legendFormat": "Received bytes in {{`{{`}}instance{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   },
@@ -2647,7 +2647,7 @@ data:
                     "expr": "- sum(rate(node_network_transmit_bytes_total[$__rate_interval])) by (instance)",
                     "hide": false,
                     "interval": "$resolution",
-                    "legendFormat": "Transmitted bytes in {{ instance }}",
+                    "legendFormat": "Transmitted bytes in {{`{{`}}instance{{`}}`}}",
                     "range": true,
                     "refId": "B"
                   }
@@ -2744,7 +2744,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(rate(node_network_receive_bytes_total{device!~\"lxc.*|veth.*|lo\"}[$__rate_interval])) by (instance)",
                     "interval": "$resolution",
-                    "legendFormat": "Received bytes in {{ instance }}",
+                    "legendFormat": "Received bytes in {{`{{`}}instance{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   },
@@ -2757,7 +2757,7 @@ data:
                     "expr": "- sum(rate(node_network_transmit_bytes_total{device!~\"lxc.*|veth.*|lo\"}[$__rate_interval])) by (instance)",
                     "hide": false,
                     "interval": "$resolution",
-                    "legendFormat": "Transmitted bytes in {{ instance }}",
+                    "legendFormat": "Transmitted bytes in {{`{{`}}instance{{`}}`}}",
                     "range": true,
                     "refId": "B"
                   }
@@ -2854,7 +2854,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(rate(node_network_receive_bytes_total{device=\"lo\"}[$__rate_interval])) by (instance)",
                     "interval": "$resolution",
-                    "legendFormat": "Received bytes in {{ instance }}",
+                    "legendFormat": "Received bytes in {{`{{`}}instance{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   },
@@ -2867,7 +2867,7 @@ data:
                     "expr": "- sum(rate(node_network_transmit_bytes_total{device=\"lo\"}[$__rate_interval])) by (instance)",
                     "hide": false,
                     "interval": "$resolution",
-                    "legendFormat": "Transmitted bytes in {{ instance }}",
+                    "legendFormat": "Transmitted bytes in {{`{{`}}instance{{`}}`}}",
                     "range": true,
                     "refId": "B"
                   }
