@@ -3754,7 +3754,7 @@ data:
               "Kubernetes",
               "Prometheus"
             ],
-            "templating": {{{device}}
+            "templating": {{`{{`}}device{{`}}`}}
                 {
                   "current": {
                     "selected": false,
