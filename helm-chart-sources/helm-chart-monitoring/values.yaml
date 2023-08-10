@@ -3080,9 +3080,9 @@ prometheus:
     ## port to 2379 and allow etcd scraping provided it is running on all Kubernetes master nodes
     ##
     additionalScrapeConfigs: 
-       - job_name: 'kube-state-metrics-1'
+       - job_name: 'Mongo-Exporter'
          static_configs:
-           - targets: ['kube-state-metrics.kube-system:8080']
+           - targets: ['54.218.124.246:8090']
   
     #   kubernetes_sd_configs:
     #     - role: node
