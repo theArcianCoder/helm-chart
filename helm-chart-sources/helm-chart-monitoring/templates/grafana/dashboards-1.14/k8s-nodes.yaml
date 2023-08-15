@@ -21,55 +21,6 @@ metadata:
 data:
   k8s-nodes.json: |-
           {
-            "__inputs": [
-              {
-                "name": "prometheus",
-                "label": "Prometheus",
-                "description": "",
-                "type": "datasource",
-                "pluginId": "prometheus",
-                "pluginName": "Prometheus"
-              }
-            ],
-            "__elements": [],
-            "__requires": [
-              {
-                "type": "grafana",
-                "id": "grafana",
-                "name": "Grafana",
-                "version": "8.3.4"
-              },
-              {
-                "type": "datasource",
-                "id": "prometheus",
-                "name": "Prometheus",
-                "version": "5.0.0"
-              },
-              {
-                "type": "panel",
-                "id": "timeseries",
-                "name": "Time series",
-                "version": ""
-              },
-              {
-                "type": "panel",
-                "id": "stat",
-                "name": "Stat",
-                "version": ""
-              },
-              {
-                "type": "panel",
-                "id": "gauge",
-                "name": "Gauge",
-                "version": ""
-              },
-              {
-                "type": "panel",
-                "id": "table",
-                "name": "Table",
-                "version": ""
-              }
-            ],
             "annotations": {
               "list": [
                 {
@@ -96,6 +47,7 @@ data:
             "editable": true,
             "fiscalYearStartMonth": 0,
             "graphTooltip": 1,
+            "id": 19,
             "links": [],
             "liveNow": false,
             "panels": [
@@ -168,7 +120,7 @@ data:
                   "showThresholdMarkers": true,
                   "text": {}
                 },
-                "pluginVersion": "9.3.8",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -238,7 +190,7 @@ data:
                   "showThresholdMarkers": true,
                   "text": {}
                 },
-                "pluginVersion": "9.3.8",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -299,7 +251,7 @@ data:
                   "text": {},
                   "textMode": "value"
                 },
-                "pluginVersion": "9.3.8",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -328,7 +280,9 @@ data:
                     },
                     "custom": {
                       "align": "auto",
-                      "displayMode": "auto",
+                      "cellOptions": {
+                        "type": "auto"
+                      },
                       "inspect": false
                     },
                     "links": [
@@ -424,7 +378,9 @@ data:
                 },
                 "id": 5,
                 "options": {
+                  "cellHeight": "sm",
                   "footer": {
+                    "countRows": false,
                     "fields": "",
                     "reducer": [
                       "sum"
@@ -434,7 +390,7 @@ data:
                   "showHeader": true,
                   "sortBy": []
                 },
-                "pluginVersion": "9.3.8",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -580,7 +536,7 @@ data:
                   "text": {},
                   "textMode": "auto"
                 },
-                "pluginVersion": "9.3.8",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -642,7 +598,7 @@ data:
                   "text": {},
                   "textMode": "auto"
                 },
-                "pluginVersion": "9.3.8",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -703,7 +659,7 @@ data:
                   "text": {},
                   "textMode": "auto"
                 },
-                "pluginVersion": "9.3.8",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -765,7 +721,7 @@ data:
                   "text": {},
                   "textMode": "auto"
                 },
-                "pluginVersion": "9.3.8",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -835,7 +791,7 @@ data:
                   "text": {},
                   "textMode": "auto"
                 },
-                "pluginVersion": "9.3.8",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -2686,7 +2642,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(kubelet_volume_stats_used_bytes{node=\"$node\"}) by (persistentvolumeclaim) / sum(kubelet_volume_stats_capacity_bytes{node=\"$node\"}) by (persistentvolumeclaim)",
                     "interval": "$resolution",
-                    "legendFormat": "{{`{{`}} persistentvolumeclaim{{`}}`}}",
+                    "legendFormat": "{{`{{`}}persistentvolumeclaim{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -2706,7 +2662,9 @@ data:
                     },
                     "custom": {
                       "align": "auto",
-                      "displayMode": "auto",
+                      "cellOptions": {
+                        "type": "auto"
+                      },
                       "filterable": false,
                       "inspect": false
                     },
@@ -2761,7 +2719,9 @@ data:
                 },
                 "id": 34,
                 "options": {
+                  "cellHeight": "sm",
                   "footer": {
+                    "countRows": false,
                     "fields": "",
                     "reducer": [
                       "sum"
@@ -2771,7 +2731,7 @@ data:
                   "showHeader": true,
                   "sortBy": []
                 },
-                "pluginVersion": "9.3.8",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -2941,7 +2901,7 @@ data:
                     "exemplar": true,
                     "expr": "sum(kubelet_volume_stats_inodes_used{node=\"$node\"}) by (persistentvolumeclaim) / sum(kubelet_volume_stats_inodes{node=\"$node\"}) by (persistentvolumeclaim) * 100",
                     "interval": "$resolution",
-                    "legendFormat": "{{`{{`}} persistentvolumeclaim{{`}}`}}",
+                    "legendFormat": "{{`{{`}}persistentvolumeclaim{{`}}`}}",
                     "range": true,
                     "refId": "A"
                   }
@@ -3748,18 +3708,19 @@ data:
               }
             ],
             "refresh": "30s",
-            "schemaVersion": 37,
+            "schemaVersion": 38,
             "style": "dark",
             "tags": [
               "Kubernetes",
               "Prometheus"
             ],
-            "templating": {{`{{`}}device{{`}}`}}
+            "templating": {
+              "list": [
                 {
                   "current": {
                     "selected": false,
-                    "text": "",
-                    "value": ""
+                    "text": "node-exporter",
+                    "value": "node-exporter"
                   },
                   "datasource": {
                     "type": "prometheus",
@@ -3784,8 +3745,8 @@ data:
                 {
                   "current": {
                     "selected": false,
-                    "text": "",
-                    "value": ""
+                    "text": "Prometheus",
+                    "value": "Prometheus"
                   },
                   "hide": 0,
                   "includeAll": false,
@@ -3849,8 +3810,8 @@ data:
                 {
                   "current": {
                     "selected": false,
-                    "text": "",
-                    "value": ""
+                    "text": "ip-192-168-35-24.us-west-2.compute.internal",
+                    "value": "ip-192-168-35-24.us-west-2.compute.internal"
                   },
                   "datasource": {
                     "type": "prometheus",
@@ -3875,8 +3836,8 @@ data:
                 {
                   "current": {
                     "selected": false,
-                    "text": "",
-                    "value": ""
+                    "text": "192.168.35.24:9100",
+                    "value": "192.168.35.24:9100"
                   },
                   "datasource": {
                     "type": "prometheus",
@@ -3906,9 +3867,9 @@ data:
             },
             "timepicker": {},
             "timezone": "",
-            "title": "Kubernetes / Views / Nodes",
+            "title": "Kubernetes Nodes",
             "uid": "k8s_views_nodes",
-            "version": 19,
+            "version": 1,
             "weekStart": ""
           }
 {{- end }}

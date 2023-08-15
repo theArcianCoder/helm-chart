@@ -21,49 +21,6 @@ metadata:
 data:
   k8s-views-global.json: |-
           {
-            "__inputs": [
-              {
-                "name": "prometheus",
-                "label": "Prometheus",
-                "description": "",
-                "type": "datasource",
-                "pluginId": "prometheus",
-                "pluginName": "Prometheus"
-              }
-            ],
-            "__elements": [],
-            "__requires": [
-              {
-                "type": "grafana",
-                "id": "grafana",
-                "name": "Grafana",
-                "version": "8.3.4"
-              },
-              {
-                "type": "datasource",
-                "id": "prometheus",
-                "name": "Prometheus",
-                "version": "5.0.0"
-              },
-              {
-                "type": "panel",
-                "id": "timeseries",
-                "name": "Time series",
-                "version": ""
-              },
-              {
-                "type": "panel",
-                "id": "stat",
-                "name": "Stat",
-                "version": ""
-              },
-              {
-                "type": "panel",
-                "id": "gauge",
-                "name": "Gauge",
-                "version": ""
-              }
-            ],
             "annotations": {
               "list": [
                 {
@@ -90,6 +47,7 @@ data:
             "editable": true,
             "fiscalYearStartMonth": 0,
             "graphTooltip": 1,
+            "id": 1,
             "links": [],
             "liveNow": false,
             "panels": [
@@ -162,7 +120,7 @@ data:
                   "showUnfilled": true,
                   "valueMode": "color"
                 },
-                "pluginVersion": "10.0.3",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -259,7 +217,7 @@ data:
                   "text": {},
                   "valueMode": "color"
                 },
-                "pluginVersion": "10.0.3",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -345,7 +303,7 @@ data:
                   "text": {},
                   "textMode": "value"
                 },
-                "pluginVersion": "10.0.3",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -647,7 +605,7 @@ data:
                   "text": {},
                   "textMode": "value"
                 },
-                "pluginVersion": "10.0.3",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -707,7 +665,7 @@ data:
                   "text": {},
                   "textMode": "auto"
                 },
-                "pluginVersion": "10.0.3",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -806,7 +764,7 @@ data:
                   "text": {},
                   "textMode": "auto"
                 },
-                "pluginVersion": "10.0.3",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -904,7 +862,7 @@ data:
                   "text": {},
                   "textMode": "value"
                 },
-                "pluginVersion": "10.0.3",
+                "pluginVersion": "9.5.2",
                 "targets": [
                   {
                     "datasource": {
@@ -987,8 +945,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "yellow",
@@ -1085,8 +1042,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "#EAB839",
@@ -1194,8 +1150,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -1294,8 +1249,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -1395,8 +1349,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -1495,8 +1448,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -1602,8 +1554,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -1709,8 +1660,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -1824,8 +1774,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -1938,8 +1887,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -2041,8 +1989,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -2144,8 +2091,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -2264,8 +2210,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -2373,8 +2318,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -2482,8 +2426,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -2591,8 +2534,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -2701,8 +2643,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -2811,8 +2752,7 @@ data:
                       "mode": "absolute",
                       "steps": [
                         {
-                          "color": "green",
-                          "value": null
+                          "color": "green"
                         },
                         {
                           "color": "red",
@@ -2960,7 +2900,7 @@ data:
             "timezone": "",
             "title": "Kubernetes / Views / Global",
             "uid": "k8s_views_global",
-            "version": 31,
+            "version": 1,
             "weekStart": ""
           }
 {{- end }}

@@ -2427,7 +2427,7 @@ data:
                 ]
             },
             "timezone": "browser",
-            "title": "Kubernetes Cluster Overview",
+            "title": "Kubernetes Cluster Overview - Basic",
             "uid": "CKzH7V-4k",
             "version": 15,
             "weekStart": ""

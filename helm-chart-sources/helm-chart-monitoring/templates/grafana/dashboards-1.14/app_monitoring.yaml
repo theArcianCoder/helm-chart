@@ -1019,7 +1019,7 @@ data:
               ]
             },
             "timezone": "browser",
-            "title": "Test",
+            "title": "Kubernetes Service",
             "uid": "YXxSNAM7k1234",
             "version": 12,
             "weekStart": ""
