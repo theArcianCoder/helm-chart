@@ -2898,7 +2898,7 @@ data:
             },
             "timepicker": {},
             "timezone": "",
-            "title": "Kubernetes / Views / Global",
+            "title": "Kubernetes Cluster Overview - Advanced",
             "uid": "k8s_views_global",
             "version": 1,
             "weekStart": ""
