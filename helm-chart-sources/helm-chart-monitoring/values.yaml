@@ -3082,7 +3082,7 @@ prometheus:
     additionalScrapeConfigs: 
        - job_name: 'Mongo-Exporter'
          static_configs:
-           - targets: ['54.218.124.246:8090']
+           - targets: ['54.218.124.246:8090','54.218.124.246:9216','172.31.27.34:9216']
   
     #   kubernetes_sd_configs:
     #     - role: node
