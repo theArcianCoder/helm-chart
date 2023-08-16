@@ -1345,7 +1345,7 @@ data:
                 },
                 "timepicker": {},
                 "timezone": "",
-                "title": "Kubernetes / System / API Server",
+                "title": "Kubernetes API Server",
                 "uid": "k8s_system_apisrv",
                 "version": 13,
                 "weekStart": ""

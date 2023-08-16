@@ -1088,7 +1088,7 @@ data:
               ]
             },
             "timezone": "browser",
-            "title": "Kubernetes Deployments Copy",
+            "title": "Kubernetes Deployment",
             "uid": "a493175c-767d-4a7d-be0e-f22081e7d05b",
             "version": 3,
             "weekStart": ""
