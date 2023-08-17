@@ -620,7 +620,7 @@ data:
                 },
                 "editorMode": "code",
                 "expr": "kube_{{`{{`}}horizontalpodautoscaler{{`}}`}}_status_current_replicas / kube_{{`{{`}}horizontalpodautoscaler{{`}}`}}_spec_max_replicas * 100 ",
-                "legendFormat": "{{{{`{{`}}horizontalpodautoscaler{{`}}`}}}}",
+                "legendFormat": "{{`{{`}}horizontalpodautoscaler{{`}}`}}",
                 "range": true,
                 "refId": "A"
               }
