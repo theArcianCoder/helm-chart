@@ -20,7 +20,7 @@ metadata:
 {{ include "kube-prometheus-stack.labels" $ | indent 4 }}
 data:
   mongodb-overview.json: |- 
-         {
+       {
           "annotations": {
             "list": [
               {
@@ -1780,5 +1780,5 @@ data:
           "uid": "c4abac5c-024e-46b2-ad90-55193de4cab8",
           "version": 1,
           "weekStart": ""
-         }
+        }
 {{- end}}
