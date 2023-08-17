@@ -1350,7 +1350,7 @@ data:
                   "expr": "sum(elasticsearch_thread_pool_queue_count{cluster=~\"$cluster\", type!=\"management\"}) by (type)",
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "Type: {{type}}",
+                  "legendFormat": "Type: {{`{{`}}type{{`}}`}}",
                   "refId": "A",
                   "step": 240
                 }
