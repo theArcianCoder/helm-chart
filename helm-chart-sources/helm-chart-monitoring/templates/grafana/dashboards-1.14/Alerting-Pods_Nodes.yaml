@@ -619,8 +619,8 @@ data:
                   "uid": "prometheus"
                 },
                 "editorMode": "code",
-                "expr": "kube_horizontalpodautoscaler_status_current_replicas / kube_horizontalpodautoscaler_spec_max_replicas * 100 ",
-                "legendFormat": "{{horizontalpodautoscaler}}",
+                "expr": "kube_{{`{{`}}horizontalpodautoscaler{{`}}`}}_status_current_replicas / kube_{{`{{`}}horizontalpodautoscaler{{`}}`}}_spec_max_replicas * 100 ",
+                "legendFormat": "{{{{`{{`}}horizontalpodautoscaler{{`}}`}}}}",
                 "range": true,
                 "refId": "A"
               }
