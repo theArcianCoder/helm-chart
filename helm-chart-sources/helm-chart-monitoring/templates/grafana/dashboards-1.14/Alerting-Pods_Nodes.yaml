@@ -46,7 +46,7 @@ data:
         "editable": true,
         "fiscalYearStartMonth": 0,
         "graphTooltip": 0,
-        "id": 9,
+        "id": 13,
         "links": [],
         "liveNow": false,
         "panels": [
@@ -161,7 +161,7 @@ data:
                       "value": {
                         "legend": false,
                         "tooltip": false,
-                        "viz": true
+                        "viz": false
                       }
                     }
                   ]
@@ -620,7 +620,7 @@ data:
                 },
                 "editorMode": "code",
                 "expr": "kube_horizontalpodautoscaler_status_current_replicas / kube_horizontalpodautoscaler_spec_max_replicas * 100 ",
-                "legendFormat": "{{`{{`}}horizontalpodautoscaler{{`}}`}}",
+                "legendFormat": "{{horizontalpodautoscaler}}",
                 "range": true,
                 "refId": "A"
               }
