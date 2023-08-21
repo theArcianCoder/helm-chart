@@ -601,6 +601,13 @@ alertmanager:
     #       requests:
     #         storage: 50Gi
     #     selector: {}
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: ebs-storage
+    provisioner: kubernetes.io/aws-ebs
+    parameters:
+      type: gp2
 
 
     ## The external URL the Alertmanager instances will be available under. This is necessary to generate correct URLs. This is necessary if Alertmanager is not served from root of a DNS name. string  false
@@ -3055,6 +3062,14 @@ prometheus:
     #        requests:
     #          storage: 50Gi
     #    selector: {}
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: ebs-storage
+    provisioner: kubernetes.io/aws-ebs
+    parameters:
+      type: gp2
+
 
     ## Using tmpfs volume
     ##
@@ -3706,6 +3721,14 @@ thanosRuler:
     #       requests:
     #         storage: 50Gi
     #   selector: {}
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: ebs-storage
+    provisioner: kubernetes.io/aws-ebs
+    parameters:
+      type: gp2
+    
 
     ## AlertmanagerConfig define configuration for connecting to alertmanager.
     ## Only available with Thanos v0.10.0 and higher. Maps to the alertmanagers.config Thanos Ruler arg.
