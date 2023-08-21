@@ -3053,12 +3053,6 @@ prometheus:
     provisioner: kubernetes.io/aws-ebs
     parameters:
       type: gp2
-
----
-    apiVersion: monitoring.coreos.com/v1
-    kind: Prometheus
-    metadata:
-      name: persisted
     spec:
       storage:
         volumeClaimTemplate:
