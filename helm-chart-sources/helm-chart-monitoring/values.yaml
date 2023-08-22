@@ -3048,10 +3048,10 @@ prometheus:
     storageSpec: 
         volumeClaimTemplate:
           spec:
-            storageClassName: ssd
+            storageClassName: gp2
             resources:
               requests:
-                storage: 40Gi
+                storage: 10Gi
     
 
     ## Using tmpfs volume
