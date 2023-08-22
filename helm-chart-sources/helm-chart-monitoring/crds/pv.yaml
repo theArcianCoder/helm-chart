@@ -5,13 +5,11 @@ kind: PersistentVolume
 metadata:
   name: grafana-pv
 spec:
-  storageClassName: "gp2"  # Update with your StorageClass
   capacity:
-    storage: 10Gi  # Adjust as needed
+    storage: 10Gi  # Specify the desired storage size
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  hostPath:
-    path: "/tmp/grafana-pv"
+  storageClassName: "gp2"  # Update with your StorageClass
   awsElasticBlockStore:
-    volumeID: vol-0c48495c98f0d0046
+    volumeID: vol-0c48495c98f0d0046  # Replace with your EBS volume ID
