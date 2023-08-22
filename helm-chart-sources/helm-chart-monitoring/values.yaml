@@ -3695,16 +3695,16 @@ thanosRuler:
     ## Storage is the definition of how storage will be used by the ThanosRuler instances.
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/storage.md
     ##
-    storage: 
-    volumeClaimTemplate:
-      spec:
-        storageClassName: gp2
-        accessModes: ["ReadWriteOnce"]
-        provisioner: kubernetes.io/aws-ebs
-        resources:
-          requests:
-            storage: 10Gi
-        selector: {}
+    storage: {}
+    # volumeClaimTemplate:
+    #   spec:
+    #     storageClassName: gp2
+    #     accessModes: ["ReadWriteOnce"]
+    #     provisioner: kubernetes.io/aws-ebs
+    #     resources:
+    #       requests:
+    #         storage: 10Gi
+    #     selector: {}
     
 
     ## AlertmanagerConfig define configuration for connecting to alertmanager.
@@ -3868,14 +3868,14 @@ thanosRuler:
 ##
 cleanPrometheusOperatorObjectNames: false
 
-
+---
 grafana:
   persistence:
-    enabled: true
-    existingClaim: grafana-pvc  # Use the name of your PVC
+    grafanaEnabled: true
+    grafanaExistingClaim: grafana-pvc  # Use the name of your PVC
 
 prometheus:
   server:
     persistence:
-      enabled: true
-      existingClaim: grafana-pvc  # Use the name of your PVC
+      prometheusEnabled: true
+      prometheusExistingClaim: grafana-pvc  # Use the name of your PVC
