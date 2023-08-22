@@ -592,16 +592,16 @@ alertmanager:
     ## Storage is the definition of how storage will be used by the Alertmanager instances.
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/storage.md
     ##
-    storage:
-    volumeClaimTemplate:
-      spec:
-        storageClassName: gp2
-        accessModes: ["ReadWriteOnce"]
-        provisioner: kubernetes.io/aws-ebs
-        resources:
-          requests:
-            storage: 10Gi
-        selector: {}
+    storage: {}
+    # volumeClaimTemplate:
+    #   spec:
+    #     storageClassName: gp2
+    #     accessModes: ["ReadWriteOnce"]
+    #     provisioner: kubernetes.io/aws-ebs
+    #     resources:
+    #       requests:
+    #         storage: 10Gi
+    #     selector: {}
 
 
     ## The external URL the Alertmanager instances will be available under. This is necessary to generate correct URLs. This is necessary if Alertmanager is not served from root of a DNS name. string  false
@@ -3045,13 +3045,13 @@ prometheus:
     ## Prometheus StorageSpec for persistent data
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/storage.md
     ##
-    storageSpec: 
-        volumeClaimTemplate:
-          spec:
-            storageClassName: gp2
-            resources:
-              requests:
-                storage: 10Gi
+    storageSpec: {}
+        # volumeClaimTemplate:
+        #   spec:
+        #     storageClassName: gp2
+        #     resources:
+        #       requests:
+        #         storage: 10Gi
     
 
     ## Using tmpfs volume
@@ -3868,14 +3868,10 @@ thanosRuler:
 ##
 cleanPrometheusOperatorObjectNames: false
 
-grafanaspec:
-  persistence:
-    grafanaEnabled: true
-    grafanaExistingClaim: grafana-pvc  # Use the name of your PVC
 
-prometheusspec:
-  server:
-    persistence:
-      enabled: true
-      storageClassName: gp2  # Update with the appropriate StorageClass
-      size: 10Gi  # Specify the desired storage size  # Use the name of your PVC
+# prometheusspec:
+#   server:
+#     persistence:
+#       enabled: true
+#       storageClassName: gp2  # Update with the appropriate StorageClass
+#       size: 10Gi  # Specify the desired storage size  # Use the name of your PVC
