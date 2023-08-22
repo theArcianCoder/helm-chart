@@ -3868,13 +3868,12 @@ thanosRuler:
 ##
 cleanPrometheusOperatorObjectNames: false
 
----
-grafana:
+grafanaspec:
   persistence:
     grafanaEnabled: true
     grafanaExistingClaim: grafana-pvc  # Use the name of your PVC
 
-prometheus:
+prometheusspec:
   server:
     persistence:
       prometheusEnabled: true
