@@ -1,0 +1,15 @@
+# custom-resources/pv.yaml
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: grafana-pv
+spec:
+  storageClassName: "gp2"  # Update with your StorageClass
+  capacity:
+    storage: 10Gi  # Adjust as needed
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: "/tmp/grafana-pv"

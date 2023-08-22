@@ -3046,13 +3046,6 @@ prometheus:
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/storage.md
     ##
     storageSpec: 
-    apiVersion: storage.k8s.io/v1
-    kind: StorageClass
-    provisioner: kubernetes.io/aws-ebs
-    parameters:
-      type: gp2
-    spec:
-      storage:
         volumeClaimTemplate:
           spec:
             storageClassName: ssd
@@ -3874,3 +3867,15 @@ thanosRuler:
 ## Setting to true produces cleaner resource names, but requires a data migration because the name of the persistent volume changes. Therefore this should only be set once on initial installation.
 ##
 cleanPrometheusOperatorObjectNames: false
+
+
+grafana:
+  persistence:
+    enabled: true
+    existingClaim: grafana-pvc  # Use the name of your PVC
+
+prometheus:
+  server:
+    persistence:
+      enabled: true
+      existingClaim: grafana-pvc  # Use the name of your PVC
