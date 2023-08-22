@@ -3876,5 +3876,6 @@ grafanaspec:
 prometheusspec:
   server:
     persistence:
-      prometheusEnabled: true
-      prometheusExistingClaim: grafana-pvc  # Use the name of your PVC
+      enabled: true
+      storageClassName: gp2  # Update with the appropriate StorageClass
+      size: 10Gi  # Specify the desired storage size  # Use the name of your PVC
