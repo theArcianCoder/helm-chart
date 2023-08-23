@@ -3875,3 +3875,10 @@ cleanPrometheusOperatorObjectNames: false
 #       enabled: true
 #       storageClassName: gp2  # Update with the appropriate StorageClass
 #       size: 10Gi  # Specify the desired storage size  # Use the name of your PVC
+grafana.ini:
+   database:
+    type: mysql
+    host: grafana-1.cvgpo1oo88u4.us-west-2.rds.amazonaws.com:3306
+    name: grafana_db
+    user: admin
+    password: admin1234
