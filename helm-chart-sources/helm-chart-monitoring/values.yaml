@@ -753,7 +753,15 @@ alertmanager:
 
 ## Using default values from https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
 ##
-grafana:
+grafana: 
+  grafana.ini:
+        database:
+          type: mysql
+          host: grafana-1.cvgpo1oo88u4.us-west-2.rds.amazonaws.com:3306
+          name: grafana_db
+          user: admin
+          password: admin1234
+
   enabled: true
   namespaceOverride: ""
 
@@ -3875,10 +3883,5 @@ cleanPrometheusOperatorObjectNames: false
 #       enabled: true
 #       storageClassName: gp2  # Update with the appropriate StorageClass
 #       size: 10Gi  # Specify the desired storage size  # Use the name of your PVC
-grafana.ini:
-   database:
-    type: mysql
-    host: grafana-1.cvgpo1oo88u4.us-west-2.rds.amazonaws.com:3306
-    name: grafana_db
-    user: admin
-    password: admin1234
+
+      
