@@ -762,7 +762,6 @@ grafana:
     name: grafana_db
     user: admin
     password: admin1234
-    enabled: true
   namespaceOverride: ""
 
   ## ForceDeployDatasources Create datasource configmap even if grafana deployment has been disabled
