@@ -756,11 +756,11 @@ alertmanager:
 grafana: 
   grafana.ini:
         database:
-          type: mysql
-          host: grafana-1.cvgpo1oo88u4.us-west-2.rds.amazonaws.com
-          name: grafana_db
-          user: admin
-          password: admin1234
+          type: "mysql"
+          host: "grafana-1.cvgpo1oo88u4.us-west-2.rds.amazonaws.com:3306"
+          name: "grafana_db"
+          user: "admin"
+          password: "admin1234"
 
   enabled: true
   namespaceOverride: ""
