@@ -754,14 +754,6 @@ alertmanager:
 ## Using default values from https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
 ##
 grafana: 
-  grafana.ini:
-        database:
-          type: "mysql"
-          host: "grafana-1.cvgpo1oo88u4.us-west-2.rds.amazonaws.com:3306"
-          name: "grafana_db"
-          user: "admin"
-          password: "admin1234"
-
   enabled: true
   namespaceOverride: ""
 
