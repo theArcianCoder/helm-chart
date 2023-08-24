@@ -755,6 +755,7 @@ alertmanager:
 ##
 grafana: 
   enabled: true
+  namespaceOverride: ""
   persistence:
     enabled: true
     type: mysql
@@ -762,7 +763,6 @@ grafana:
     name: grafana_db
     user: admin
     password: admin1234
-  namespaceOverride: ""
 
   ## ForceDeployDatasources Create datasource configmap even if grafana deployment has been disabled
   ##
