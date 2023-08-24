@@ -756,13 +756,6 @@ alertmanager:
 grafana: 
   enabled: true
   namespaceOverride: ""
-  persistence:
-    enabled: true
-    type: mysql
-    host: grafana-1.cvgpo1oo88u4.us-west-2.rds.amazonaws.com:3306
-    name: grafana_db
-    user: admin
-    password: admin1234
 
   ## ForceDeployDatasources Create datasource configmap even if grafana deployment has been disabled
   ##
