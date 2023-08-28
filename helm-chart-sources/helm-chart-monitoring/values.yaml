@@ -3867,13 +3867,4 @@ thanosRuler:
 ## Setting to true produces cleaner resource names, but requires a data migration because the name of the persistent volume changes. Therefore this should only be set once on initial installation.
 ##
 cleanPrometheusOperatorObjectNames: false
-
-
-# prometheusspec:
-#   server:
-#     persistence:
-#       enabled: true
-#       storageClassName: gp2  # Update with the appropriate StorageClass
-#       size: 10Gi  # Specify the desired storage size  # Use the name of your PVC
-
       
